@@ -1,0 +1,18 @@
+name: geira_icons
+description: Geira Icons designed by and for the Flutter community
+homepage: https://github.com/geira/geira_icons
+version: 1.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  fonts:
+    - family: Geira Icons
+      fonts:
+        - asset: lib/fonts/GeiraIcons-Regular.ttf
+
+environment:
+  sdk: ">=1.19.0 <3.0.0"
+  flutter: ">=0.1.2"
