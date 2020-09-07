@@ -30,6 +30,8 @@ class GIcons {
   static const IconData mic = const _GIconData(0xE05C);
   static const IconData mic_off = const _GIconData(0xE05D);
   static const IconData recording = const _GIconData(0xE05E);
+  static const IconData sidebar_close = const _GIconData(0xE09F);
+  static const IconData sidebar_open = const _GIconData(0xE0A0);
   static const IconData open_menu = const _GIconData(0xE0A1);
   static const IconData close_menu = const _GIconData(0xE0A2);
   static const IconData down_menu = const _GIconData(0xE0A3);
@@ -55,6 +57,12 @@ class GIcons {
   static const IconData deal = const _GIconData(0xE0FA);
   static const IconData gift = const _GIconData(0xE0FB);
   static const IconData time = const _GIconData(0xE0FC);
+  static const IconData folder = const _GIconData(0xE111);
+  static const IconData folder_open = const _GIconData(0xE112);
+  static const IconData folder_add = const _GIconData(0xE113);
+  static const IconData folder_special = const _GIconData(0xE114);
+  static const IconData folder_delete = const _GIconData(0xE115);
+  static const IconData page = const _GIconData(0xE117);
   static const IconData book = const _GIconData(0xE118);
   static const IconData test = const _GIconData(0xE119);
   static const IconData flash_cards = const _GIconData(0xE11A);
@@ -110,6 +118,7 @@ class GIcons {
   static const IconData campaing = const _GIconData(0xE23B);
   static const IconData push_pin = const _GIconData(0xE244);
   static const IconData search = const _GIconData(0xE245);
+  static const IconData search_page = const _GIconData(0xE246);
   static const IconData camera = const _GIconData(0xE254);
   static const IconData images = const _GIconData(0xE256);
   static const IconData remove = const _GIconData(0xE257);
@@ -121,6 +130,7 @@ class GIcons {
   static const IconData filter = const _GIconData(0xE25D);
   static const IconData edit = const _GIconData(0xE25E);
   static const IconData settings = const _GIconData(0xE25F);
+  static const IconData save = const _GIconData(0xE260);
   static const IconData television = const _GIconData(0xE26B);
   static const IconData store = const _GIconData(0xE26C);
   static const IconData drink = const _GIconData(0xE26D);
