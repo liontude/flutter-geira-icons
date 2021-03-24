@@ -1,6 +1,6 @@
 # Geira Icons
 
-The [Geira Icons](http://icons.geira.com/) pack available as set of Flutter Icons.
+The [Geira Icons](https://icons.geira.com/) pack available as set of Flutter Icons.
 
 👍 Like us on [pub.dev](https://pub.dev/packages/geira_icons)!
 
