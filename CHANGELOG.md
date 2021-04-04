@@ -1,3 +1,7 @@
+## 1.0.3
+
+* New icons
+
 ## 1.0.2
 
 * Compatibility and stability are checked

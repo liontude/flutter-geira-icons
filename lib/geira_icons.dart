@@ -30,6 +30,15 @@ class GIcons {
   static const IconData mic = const _GIconData(0xE05C);
   static const IconData mic_off = const _GIconData(0xE05D);
   static const IconData recording = const _GIconData(0xE05E);
+  static const IconData play_arrow = const _GIconData(0xE06D);
+  static const IconData pause = const _GIconData(0xE06E);
+  static const IconData stop = const _GIconData(0xE06F);
+  static const IconData skip_next = const _GIconData(0xE07A);
+  static const IconData skip_previous = const _GIconData(0xE07B);
+  static const IconData record = const _GIconData(0xE07C);
+  static const IconData previous = const _GIconData(0xE08C);
+  static const IconData next = const _GIconData(0xE08D);
+  static const IconData list = const _GIconData(0xE09E);
   static const IconData sidebar_close = const _GIconData(0xE09F);
   static const IconData sidebar_open = const _GIconData(0xE0A0);
   static const IconData open_menu = const _GIconData(0xE0A1);
@@ -46,6 +55,8 @@ class GIcons {
   static const IconData home = const _GIconData(0xE0BA);
   static const IconData language = const _GIconData(0xE0BB);
   static const IconData url = const _GIconData(0xE0BC);
+  static const IconData lang = const _GIconData(0xE0BD);
+  static const IconData lang_help = const _GIconData(0xE0BE);
   static const IconData map = const _GIconData(0xE0BF);
   static const IconData flag = const _GIconData(0xE0C9);
   static const IconData place = const _GIconData(0xE0CA);
@@ -115,7 +126,7 @@ class GIcons {
   static const IconData upcoming = const _GIconData(0xE232);
   static const IconData past = const _GIconData(0xE233);
   static const IconData dashboard = const _GIconData(0xE23A);
-  static const IconData campaing = const _GIconData(0xE23B);
+  static const IconData campaign = const _GIconData(0xE23B);
   static const IconData push_pin = const _GIconData(0xE244);
   static const IconData search = const _GIconData(0xE245);
   static const IconData search_page = const _GIconData(0xE246);
@@ -134,7 +145,9 @@ class GIcons {
   static const IconData television = const _GIconData(0xE26B);
   static const IconData store = const _GIconData(0xE26C);
   static const IconData drink = const _GIconData(0xE26D);
-  static const IconData cashier = const _GIconData(0xE288);
+  static const IconData cashier = const _GIconData(0xE285);
+  static const IconData full_square = const _GIconData(0xE287);
+  static const IconData full_dot = const _GIconData(0xE288);
   static const IconData brightness_1 = const _GIconData(0xE289);
   static const IconData brightness_2 = const _GIconData(0xE28A);
   static const IconData brightness_3 = const _GIconData(0xE28B);
@@ -146,8 +159,6 @@ class GIcons {
   static const IconData twitter = const _GIconData(0xE292);
   static const IconData youtube = const _GIconData(0xE293);
   static const IconData instagram = const _GIconData(0xE294);
-  static const IconData geira_icon = const _GIconData(0xE29F);
-  static const IconData geira = const _GIconData(0xE2A0);
   static const IconData gitlab = const _GIconData(0xE2A1);
   static const IconData npm = const _GIconData(0xE2A2);
   static const IconData apple_logo = const _GIconData(0xE2A3);

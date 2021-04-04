@@ -9,7 +9,7 @@ The [Geira Icons](https://icons.geira.com/) pack available as set of Flutter Ico
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```yaml
-  geira_icons: ^1.0.0
+  geira_icons: ^1.0.3
 ```
 
 ## Usage
