@@ -17,34 +17,34 @@ String toCamelCase(String str) {
   if (matches.isEmpty) return '';
   String res = '';
   for (Match m in matches) {
-    String match = m.group(0);
+    String match = m.group(0)!;
     res += match.substring(0, 1).toUpperCase() + match.substring(1).toLowerCase();
   }
   return res.substring(0, 1).toLowerCase() + res.substring(1);
 }
 
 class IconInfo {
-  String name;
-  String identifier;
-  String codePoint;
+  String? name;
+  String? identifier;
+  String? codePoint;
 
   IconInfo({this.name, this.codePoint, this.identifier});
 }
 
 class GIconsInfo {
-  List<IconInfo> icons;
-  String version;
+  List<IconInfo>? icons;
+  String? version;
   GIconsInfo({this.icons, this.version});
 }
 
 Future<GIconsInfo> readScss() {
-  String version;
+  String? version;
   bool isIconStarted = false;
   List<IconInfo> icons = [];
   return File('./tool/_variables.scss').readAsLines().then((lines) {
     lines.forEach((line) {
       if (version == null) {
-        Match match = RegExp(r'version:\s+"(.+)"\s').firstMatch(line);
+        Match? match = RegExp(r'version:\s+"(.+)"\s').firstMatch(line);
         if (match != null && match.group(1) != null) {
           version = match.group(1);
         }
@@ -59,14 +59,14 @@ Future<GIconsInfo> readScss() {
         // is the close parenthesis, where icons are all loaded.
         bool isEndOfIcons = line.indexOf(')') >= 0;
         if (!isEndOfIcons) {
-          Match match = RegExp(r'"([a-z0-9-]+)"\:\s+([0-9A-F]+)').firstMatch(line);
+          Match? match = RegExp(r'"([a-z0-9-]+)"\:\s+([0-9A-F]+)').firstMatch(line);
           if (match != null) {
-            String iconName = match.group(1);
-            String iconIdentifier = toCamelCase(match.group(1));
+            String? iconName = match.group(1);
+            String iconIdentifier = toCamelCase(match.group(1)!);
             if (reversedKeywords.contains(iconIdentifier)) {
               iconIdentifier += 'Icon';
             }
-            String codePoint = match.group(2).toLowerCase();
+            String codePoint = match.group(2)!.toLowerCase();
             icons.add(IconInfo(name: iconName, identifier: iconIdentifier, codePoint: codePoint));
           }
         }
@@ -76,18 +76,18 @@ Future<GIconsInfo> readScss() {
   });
 }
 
-Future generateCode({String template, String dest, GIconsInfo info}) async {
+Future generateCode({required String template, String? dest, GIconsInfo? info}) async {
   String templateFile = await File(template).readAsString();
-  Match match = RegExp(r'<%(.*)%>').firstMatch(templateFile);
+  Match? match = RegExp(r'<%(.*)%>').firstMatch(templateFile);
   if (match != null) {
-    String placeholder = match.group(0);
-    String templateStatment = match.group(1);
+    String placeholder = match.group(0)!;
+    String? templateStatment = match.group(1);
     String generated = templateFile.replaceAll(
         placeholder,
-        info.icons.map((icon) {
-          return templateStatment.replaceAll('__ICON_NAME__', icon.identifier).replaceAll('__ORIGINAL_ICON_NAME__', icon.name).replaceAll('__CODE_POINT__', '0x${icon.codePoint}');
+        info!.icons!.map((icon) {
+          return templateStatment!.replaceAll('__ICON_NAME__', icon.identifier!).replaceAll('__ORIGINAL_ICON_NAME__', icon.name!).replaceAll('__CODE_POINT__', '0x${icon.codePoint}');
         }).join('\n'));
-    await File(dest).writeAsString(generated);
+    await File(dest!).writeAsString(generated);
   }
 }
 
@@ -111,9 +111,9 @@ main() async {
   File('./tool/GeiraIcons-Regular.ttf').renameSync('./lib/fonts/GeiraIcons-Regular.ttf');
   File('./tool/_variables.scss').deleteSync();
   var spec = File('./pubspec.yaml').readAsStringSync();
-  var match = RegExp(r'version:\s(\d+)\.(\d+)\.(\d+)').firstMatch(spec);
+  var match = RegExp(r'version:\s(\d+)\.(\d+)\.(\d+)').firstMatch(spec)!;
   var currentVersion = match[3];
-  var latestVersion = info.version.replaceAll('.', '');
+  var latestVersion = info.version!.replaceAll('.', '');
   print('done, latest version: ${info.version}, need publish: ${currentVersion != latestVersion}');
   exit(0);
 }

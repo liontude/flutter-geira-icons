@@ -165,14 +165,14 @@ class GIcons {
   static const IconData facebook_logo = const _GIconData(0xE2A4);
   static const IconData google_logo = const _GIconData(0xE2A5);
 
-  static IconData fromString(String key) {
-    int codePoint = iconMap[key];
+  static IconData? fromString(String key) {
+    int? codePoint = iconMap[key];
     if (codePoint == null) return null;
     return _GIconData(codePoint);
   }
 
-  IconData operator [](String key) {
-    int codePoint = iconMap[key];
+  IconData? operator [](String key) {
+    int? codePoint = iconMap[key];
     if (codePoint == null) return null;
     return _GIconData(codePoint);
   }
