@@ -1,3 +1,11 @@
+## 2.1.1
+
+* version update in the readme
+
+## 2.1.0
+
+* 34 new icons
+
 ## 2.0.0
 
 * Migrating to null safety
