@@ -1,3 +1,7 @@
+## 2.1.2
+
+* new icons
+
 ## 2.1.1
 
 * version update in the readme
