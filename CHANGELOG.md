@@ -1,3 +1,11 @@
+## 2.1.4
+
+* new icons
+
+## 2.1.3
+
+* new icons
+
 ## 2.1.2
 
 * new icons
