@@ -55,6 +55,7 @@ class GIcons {
   static const IconData up_balls = const _GIconData(0xE099);
   static const IconData download = const _GIconData(0xE09A);
   static const IconData rearrange = const _GIconData(0xE09B);
+  static const IconData slider = const _GIconData(0xE09D);
   static const IconData list = const _GIconData(0xE09E);
   static const IconData sidebar_close = const _GIconData(0xE09F);
   static const IconData sidebar_open = const _GIconData(0xE0A0);
@@ -155,7 +156,7 @@ class GIcons {
   static const IconData game = const _GIconData(0xE213);
   static const IconData lotto = const _GIconData(0xE214);
   static const IconData cabala = const _GIconData(0xE215);
-  static const IconData sad_face = const _GIconData(0xE22E);
+  static const IconData sad_face = const _GIconData(0xE22D);
   static const IconData happy_face = const _GIconData(0xE22E);
   static const IconData dictation = const _GIconData(0xE22F);
   static const IconData oral = const _GIconData(0xE230);
