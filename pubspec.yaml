@@ -1,7 +1,7 @@
 name: geira_icons
 description: Geira Icons is a constantly growing family of icons. Each icon is designed considering visual uniformity and balance.
 homepage: https://icons.geira.com
-version: 2.1.5
+version: 2.1.6
 
 dependencies:
   flutter:

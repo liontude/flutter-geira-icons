@@ -115,6 +115,12 @@ class GIcons {
   static const IconData unchecked = const _GIconData(0xE137);
   static const IconData rb_checked = const _GIconData(0xE139);
   static const IconData rb_unchecked = const _GIconData(0xE13A);
+  static const IconData hot = const _GIconData(0xE165);
+  static const IconData cold = const _GIconData(0xE166);
+  static const IconData hot_cold = const _GIconData(0xE167);
+  static const IconData delta = const _GIconData(0xE168);
+  static const IconData delta_cold = const _GIconData(0xE169);
+  static const IconData delta_hot = const _GIconData(0xE16A);
   static const IconData face_id = const _GIconData(0xE177);
   static const IconData ar_horiz = const _GIconData(0xE181);
   static const IconData ar_vert = const _GIconData(0xE182);

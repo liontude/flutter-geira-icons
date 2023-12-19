@@ -1,3 +1,7 @@
+## 2.1.6
+
+* new icons
+
 ## 2.1.5
 
 * new icon and some font adjustments
