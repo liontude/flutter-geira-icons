@@ -16,7 +16,7 @@ class GeiraIconsApp extends StatelessWidget {
         iconTheme: new IconThemeData(size: 36.0, color: Colors.black87),
         primarySwatch: Colors.blue,
         textTheme: new TextTheme(
-          bodyText2: new TextStyle(fontSize: 16.0, color: Colors.black87),
+          bodyMedium: new TextStyle(fontSize: 16.0, color: Colors.black87),
         ),
       ),
       home: new GeiraIconsHome(),
@@ -35,7 +35,11 @@ class GeiraIconsHomeState extends State<GeiraIconsHome> {
 
   @override
   Widget build(BuildContext context) {
-    final filteredIcons = icons.where((icon) => _searchTerm.isEmpty || icon.title.toLowerCase().contains(_searchTerm.toLowerCase())).toList();
+    final filteredIcons = icons
+        .where((icon) =>
+            _searchTerm.isEmpty ||
+            icon.title.toLowerCase().contains(_searchTerm.toLowerCase()))
+        .toList();
     final orientation = MediaQuery.of(context).orientation;
 
     return new Scaffold(
@@ -153,7 +157,12 @@ class IconDefinition implements Comparable {
   String toString() => 'IconDefinition{iconData: $iconData, title: $title}';
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IconDefinition && runtimeType == other.runtimeType && iconData == other.iconData && title == other.title;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is IconDefinition &&
+          runtimeType == other.runtimeType &&
+          iconData == other.iconData &&
+          title == other.title;
 
   @override
   int get hashCode => iconData.hashCode ^ title.hashCode;
