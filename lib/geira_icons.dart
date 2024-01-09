@@ -162,6 +162,7 @@ class GIcons {
   static const IconData game = const _GIconData(0xE213);
   static const IconData lotto = const _GIconData(0xE214);
   static const IconData cabala = const _GIconData(0xE215);
+  static const IconData clover = const _GIconData(0xE216);
   static const IconData sad_face = const _GIconData(0xE22D);
   static const IconData happy_face = const _GIconData(0xE22E);
   static const IconData dictation = const _GIconData(0xE22F);
@@ -178,6 +179,7 @@ class GIcons {
   static const IconData search = const _GIconData(0xE245);
   static const IconData search_page = const _GIconData(0xE246);
   static const IconData search_person = const _GIconData(0xE247);
+  static const IconData search_number = const _GIconData(0xE248);
   static const IconData camera = const _GIconData(0xE254);
   static const IconData no_image = const _GIconData(0xE255);
   static const IconData images = const _GIconData(0xE256);
