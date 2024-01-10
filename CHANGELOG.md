@@ -1,3 +1,7 @@
+## 2.1.8
+
+* some icons are improved, and some new ones are added
+
 ## 2.1.7
 
 * few new icons

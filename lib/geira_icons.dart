@@ -77,6 +77,7 @@ class GIcons {
   static const IconData lang_help = const _GIconData(0xE0BE);
   static const IconData map = const _GIconData(0xE0BF);
   static const IconData country = const _GIconData(0xE0C0);
+  static const IconData notification = const _GIconData(0xE0C8);
   static const IconData flag = const _GIconData(0xE0C9);
   static const IconData place = const _GIconData(0xE0CA);
   static const IconData mail = const _GIconData(0xE0CB);
@@ -121,6 +122,9 @@ class GIcons {
   static const IconData delta = const _GIconData(0xE168);
   static const IconData delta_cold = const _GIconData(0xE169);
   static const IconData delta_hot = const _GIconData(0xE16A);
+  static const IconData sum = const _GIconData(0xE16B);
+  static const IconData sum_hot = const _GIconData(0xE16C);
+  static const IconData sum_cold = const _GIconData(0xE16D);
   static const IconData face_id = const _GIconData(0xE177);
   static const IconData ar_horiz = const _GIconData(0xE181);
   static const IconData ar_vert = const _GIconData(0xE182);
