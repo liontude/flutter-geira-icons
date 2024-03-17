@@ -77,6 +77,7 @@ class GIcons {
   static const IconData lang_help = const _GIconData(0xE0BE);
   static const IconData map = const _GIconData(0xE0BF);
   static const IconData country = const _GIconData(0xE0C0);
+  static const IconData navigation = const _GIconData(0xE0C1);
   static const IconData notification = const _GIconData(0xE0C8);
   static const IconData flag = const _GIconData(0xE0C9);
   static const IconData place = const _GIconData(0xE0CA);
@@ -126,6 +127,8 @@ class GIcons {
   static const IconData sum_hot = const _GIconData(0xE16C);
   static const IconData sum_cold = const _GIconData(0xE16D);
   static const IconData face_id = const _GIconData(0xE177);
+  static const IconData scan = const _GIconData(0xE17F);
+  static const IconData retry_scan = const _GIconData(0xE180);
   static const IconData ar_horiz = const _GIconData(0xE181);
   static const IconData ar_vert = const _GIconData(0xE182);
   static const IconData parking = const _GIconData(0xE19F);
@@ -179,6 +182,7 @@ class GIcons {
   static const IconData month = const _GIconData(0xE236);
   static const IconData dashboard = const _GIconData(0xE23A);
   static const IconData campaign = const _GIconData(0xE23B);
+  static const IconData unpin = const _GIconData(0xE243);
   static const IconData push_pin = const _GIconData(0xE244);
   static const IconData search = const _GIconData(0xE245);
   static const IconData search_page = const _GIconData(0xE246);
