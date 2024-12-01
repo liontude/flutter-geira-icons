@@ -4,11 +4,12 @@ import 'package:flutter/widgets.dart';
 import 'package:geira_icons/icons_map.dart';
 
 class GIcons {
-  static const IconData notifications = const _GIconData(0xE000);
+  static const IconData none = const _GIconData(0xE000);
   static const IconData pencil = const _GIconData(0xE001);
   static const IconData brush = const _GIconData(0xE002);
   static const IconData wifi = const _GIconData(0xE004);
   static const IconData chat = const _GIconData(0xE005);
+  static const IconData notifications = const _GIconData(0xE007);
   static const IconData notifications_off = const _GIconData(0xE008);
   static const IconData notifications_active = const _GIconData(0xE009);
   static const IconData send = const _GIconData(0xE00A);
@@ -117,6 +118,7 @@ class GIcons {
   static const IconData unchecked = const _GIconData(0xE137);
   static const IconData rb_checked = const _GIconData(0xE139);
   static const IconData rb_unchecked = const _GIconData(0xE13A);
+  static const IconData odd_even = const _GIconData(0xE164);
   static const IconData hot = const _GIconData(0xE165);
   static const IconData cold = const _GIconData(0xE166);
   static const IconData hot_cold = const _GIconData(0xE167);
@@ -206,6 +208,7 @@ class GIcons {
   static const IconData television = const _GIconData(0xE26B);
   static const IconData store = const _GIconData(0xE26C);
   static const IconData drink = const _GIconData(0xE26D);
+  static const IconData bulb_number = const _GIconData(0xE279);
   static const IconData bulb_on = const _GIconData(0xE27A);
   static const IconData bulb = const _GIconData(0xE27B);
   static const IconData cashier = const _GIconData(0xE27C);

@@ -3,30 +3,32 @@ import 'package:geira_icons/geira_icons.dart';
 import 'package:geira_icons/icons_map.dart';
 
 void main() {
-  runApp(new GeiraIconsApp());
+  runApp(GeiraIconsApp());
 }
 
 class GeiraIconsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Geira Icons',
-      theme: new ThemeData(
-        iconTheme: new IconThemeData(size: 36.0, color: Colors.black87),
+      theme: ThemeData(
+        iconTheme: const IconThemeData(size: 36.0, color: Colors.black87),
         primarySwatch: Colors.blue,
-        textTheme: new TextTheme(
-          bodyMedium: new TextStyle(fontSize: 16.0, color: Colors.black87),
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(fontSize: 16.0, color: Colors.black87),
         ),
       ),
-      home: new GeiraIconsHome(),
+      home: const GeiraIconsHome(),
     );
   }
 }
 
 class GeiraIconsHome extends StatefulWidget {
+  const GeiraIconsHome({super.key});
+
   @override
-  State<StatefulWidget> createState() => new GeiraIconsHomeState();
+  State<StatefulWidget> createState() => GeiraIconsHomeState();
 }
 
 class GeiraIconsHomeState extends State<GeiraIconsHome> {
@@ -40,118 +42,120 @@ class GeiraIconsHomeState extends State<GeiraIconsHome> {
             _searchTerm.isEmpty ||
             icon.title.toLowerCase().contains(_searchTerm.toLowerCase()))
         .toList();
+
     final orientation = MediaQuery.of(context).orientation;
 
-    return new Scaffold(
+    return Scaffold(
       appBar: _isSearching ? _searchBar(context) : _titleBar(),
-      body: new GridView.builder(
-          itemCount: filteredIcons.length,
-          gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-          ),
-          itemBuilder: (context, index) {
-            final icon = filteredIcons[index];
+      body: GridView.builder(
+        itemCount: filteredIcons.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
+        ),
+        itemBuilder: (context, index) {
+          final icon = filteredIcons[index];
 
-            return new InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  new MaterialPageRoute<Null>(
-                    builder: (BuildContext context) {
-                      return new GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: new Container(
-                          color: Colors.white,
-                          child: new SizedBox.expand(
-                            child: new Hero(
-                              tag: icon,
-                              child: new Icon(
-                                icon.iconData,
-                                size: 100.0,
-                              ),
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<Null>(
+                  builder: (BuildContext context) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        color: Colors.white,
+                        child: SizedBox.expand(
+                          child: Hero(
+                            tag: icon,
+                            child: Icon(
+                              icon.iconData,
+                              size: 100.0,
                             ),
                           ),
                         ),
-                      );
-                    },
-                  ),
-                );
-              },
-              child: new Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  new Hero(tag: icon, child: new Icon(icon.iconData)),
-                  new Container(
-                    padding: new EdgeInsets.only(top: 16.0),
-                    child: new Text(icon.title),
-                  ),
-                ],
-              ),
-            );
-          }),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Hero(tag: icon, child: Icon(icon.iconData)),
+                Container(
+                  padding: EdgeInsets.only(top: 16.0),
+                  child: Text(icon.title),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 
   AppBar _titleBar() {
-    return new AppBar(
-      title: new Text("Geira Icons"),
+    return AppBar(
+      title: const Text("Geira Icons"),
       actions: [
-        new IconButton(
-            icon: new Icon(GIcons.search),
-            onPressed: () {
-              ModalRoute.of(context).addLocalHistoryEntry(
-                new LocalHistoryEntry(
-                  onRemove: () {
-                    setState(() {
-                      _searchTerm = "";
-                      _isSearching = false;
-                    });
-                  },
-                ),
-              );
+        IconButton(
+          icon: const Icon(GIcons.search),
+          onPressed: () {
+            ModalRoute.of(context)?.addLocalHistoryEntry(
+              LocalHistoryEntry(
+                onRemove: () {
+                  setState(() {
+                    _searchTerm = "";
+                    _isSearching = false;
+                  });
+                },
+              ),
+            );
 
-              setState(() {
-                _isSearching = true;
-              });
-            })
+            setState(() {
+              _isSearching = true;
+            });
+          },
+        )
       ],
     );
   }
 
   AppBar _searchBar(BuildContext context) {
-    return new AppBar(
-      leading: new IconButton(
-        icon: new Icon(GIcons.search),
+    return AppBar(
+      leading: IconButton(
+        icon: const Icon(GIcons.search),
         onPressed: () {
-          setState(
-            () {
-              Navigator.pop(context);
-              _isSearching = false;
-              _searchTerm = "";
-            },
-          );
+          setState(() {
+            Navigator.pop(context);
+            _isSearching = false;
+            _searchTerm = "";
+          });
         },
       ),
-      title: new TextField(
+      title: TextField(
         onChanged: (text) => setState(() => _searchTerm = text),
         autofocus: true,
-        style: new TextStyle(fontSize: 18.0),
-        decoration: new InputDecoration(),
+        style: const TextStyle(fontSize: 18.0),
+        decoration: const InputDecoration(
+          hintText: "Search icons...",
+        ),
       ),
     );
   }
 }
 
 class IconDefinition implements Comparable {
-  IconData iconData;
-  String title;
+  final IconData iconData;
+  final String title;
 
-  IconDefinition(String key) {
-    this.iconData = iconLib[key];
-    this.title = key;
-  }
+  IconDefinition(String key)
+      : iconData = iconLib[key] ?? GIcons.error,
+        title = key;
 
   @override
   String toString() => 'IconDefinition{iconData: $iconData, title: $title}';
@@ -171,6 +175,8 @@ class IconDefinition implements Comparable {
   int compareTo(other) => title.compareTo(other.title);
 }
 
-GIcons iconLib = new GIcons();
-
-var icons = iconMap.keys.map((key) => IconDefinition(key));
+// Assuming the following corrections for missing/undefined parts:
+GIcons iconLib = GIcons();
+var icons = iconMap.keys
+    .map((key) => IconDefinition(key))
+    .toList(); // Añadido "toList()" para evitar problemas
