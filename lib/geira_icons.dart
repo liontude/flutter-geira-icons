@@ -118,6 +118,8 @@ class GIcons {
   static const IconData unchecked = const _GIconData(0xE137);
   static const IconData rb_checked = const _GIconData(0xE139);
   static const IconData rb_unchecked = const _GIconData(0xE13A);
+  static const IconData match = const _GIconData(0xE13B);
+  static const IconData temperature = const _GIconData(0xE163);
   static const IconData odd_even = const _GIconData(0xE164);
   static const IconData hot = const _GIconData(0xE165);
   static const IconData cold = const _GIconData(0xE166);
@@ -205,6 +207,9 @@ class GIcons {
   static const IconData save = const _GIconData(0xE260);
   static const IconData add_square = const _GIconData(0xE262);
   static const IconData remove_square = const _GIconData(0xE263);
+  static const IconData more_less = const _GIconData(0xE264);
+  static const IconData total = const _GIconData(0xE265);
+  static const IconData number = const _GIconData(0xE266);
   static const IconData television = const _GIconData(0xE26B);
   static const IconData store = const _GIconData(0xE26C);
   static const IconData drink = const _GIconData(0xE26D);
@@ -235,6 +240,7 @@ class GIcons {
   static const IconData facebook_logo = const _GIconData(0xE2A4);
   static const IconData google_logo = const _GIconData(0xE2A5);
   static const IconData whatsapp_logo = const _GIconData(0xE2A6);
+  static const IconData x_logo = const _GIconData(0xE2A7);
   static const IconData logo = const _GIconData(0xE2AF);
 
   static IconData? fromString(String key) {

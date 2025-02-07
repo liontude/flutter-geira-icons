@@ -1,3 +1,7 @@
+## 2.2.1
+
+* Some icons have been added, improved, and changed.
+
 ## 2.2.0
 
 * Some icons have been improved, new ones have been added, and the core of the package has been updated.
