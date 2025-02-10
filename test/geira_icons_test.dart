@@ -1,29 +1,20 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geira_icons/geira_icons.dart';
-import 'package:geira_icons/geira_icons_platform_interface.dart';
-import 'package:geira_icons/geira_icons_method_channel.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-
-class MockGeiraIconsPlatform
-    with MockPlatformInterfaceMixin
-    implements GeiraIconsPlatform {
-
-  @override
-  Future<String?> getPlatformVersion() => Future.value('42');
-}
 
 void main() {
-  final GeiraIconsPlatform initialPlatform = GeiraIconsPlatform.instance;
+  group('GIcons Tests', () {
+    test('should return correct IconData for known key', () {
+      expect(GIcons.fromString('pencil'), GIcons.pencil);
+      expect(GIcons.fromString('wifi'), GIcons.wifi);
+    });
 
-  test('$MethodChannelGeiraIcons is the default instance', () {
-    expect(initialPlatform, isInstanceOf<MethodChannelGeiraIcons>());
-  });
+    test('should return null for unknown key', () {
+      expect(GIcons.fromString('unknown'), isNull);
+    });
 
-  test('getPlatformVersion', () async {
-    GeiraIcons geiraIconsPlugin = GeiraIcons();
-    MockGeiraIconsPlatform fakePlatform = MockGeiraIconsPlatform();
-    GeiraIconsPlatform.instance = fakePlatform;
-
-    expect(await geiraIconsPlugin.getPlatformVersion(), '42');
+    test('should retrieve all icon names', () {
+      final icons = GIcons.getIconsName();
+      expect(icons, containsAll(['none', 'pencil', 'brush', 'wifi']));
+    });
   });
 }

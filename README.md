@@ -9,7 +9,7 @@ The [Geira Icons](https://icons.geira.com/) pack available as set of Flutter Ico
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```yaml
-  geira_icons: ^2.2.2
+  geira_icons: ^3.0.0
 ```
 
 ## Usage
@@ -21,8 +21,8 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
                 child: Icon(
-                  // Use GIcons. Where google_logo is the name of the icon
-                  GIcons.google_logo,
+                  // Use GIcons. Where googleLogo is the name of the icon
+                  GIcons.googleLogo,
                   color: Colors.red,
                   size: 50.0,
                 ),

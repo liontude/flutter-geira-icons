@@ -1,25 +1,19 @@
-// This is a basic Flutter integration test.
-//
-// Since integration tests run in a full Flutter application, they can interact
-// with the host side of a plugin implementation, unlike Dart unit tests.
-//
-// For more information about Flutter integration tests, please see
-// https://flutter.dev/to/integration-testing
-
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-
 import 'package:geira_icons/geira_icons.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('getPlatformVersion test', (WidgetTester tester) async {
-    final GeiraIcons plugin = GeiraIcons();
-    final String? version = await plugin.getPlatformVersion();
-    // The version string depends on the host platform running the test, so
-    // just assert that some non-empty string is returned.
-    expect(version?.isNotEmpty, true);
+  testWidgets('Verify GIcons basic functionality', (WidgetTester tester) async {
+    // Verificar si los iconos se pueden obtener correctamente
+    expect(GIcons.fromString('pencil'), equals(GIcons.pencil));
+    expect(GIcons.fromString('wifi'), equals(GIcons.wifi));
+    expect(GIcons.fromString('unknown'), isNull);
+
+    // Verificar que getIconsName devuelve una lista no vacía
+    final iconsList = GIcons.getIconsName();
+    expect(iconsList.isNotEmpty, true);
+    expect(iconsList, contains('pencil'));
   });
 }
