@@ -1,3 +1,7 @@
+## 2.2.2
+
+* Detail
+
 ## 2.2.1
 
 * Some icons have been added, improved, and changed.
