@@ -1,6 +1,6 @@
-# geira_icons_example
+# Geira Icons
 
-Demonstrates how to use the geira_icons plugin.
+A new Flutter project.
 
 ## Getting Started
 

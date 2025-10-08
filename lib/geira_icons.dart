@@ -18,6 +18,7 @@ class GIcons {
   static const IconData noShow = _GIconData(0xE00D);
   static const IconData personStatus = _GIconData(0xE00E);
   static const IconData chart = _GIconData(0xE013);
+  static const IconData shuffle = _GIconData(0xE01E);
   static const IconData restore = _GIconData(0xE01F);
   static const IconData undo = _GIconData(0xE02A);
   static const IconData update = _GIconData(0xE02B);
@@ -95,15 +96,21 @@ class GIcons {
   static const IconData time = _GIconData(0xE0FC);
   static const IconData chronometer = _GIconData(0xE0FD);
   static const IconData timeRecord = _GIconData(0xE0FE);
+  static const IconData hourglass = _GIconData(0xE100);
+  static const IconData vrMobile = _GIconData(0xE108);
   static const IconData folder = _GIconData(0xE111);
   static const IconData folderOpen = _GIconData(0xE112);
   static const IconData folderAdd = _GIconData(0xE113);
   static const IconData folderSpecial = _GIconData(0xE114);
   static const IconData folderDelete = _GIconData(0xE115);
+  static const IconData folderSecure = _GIconData(0xE116);
   static const IconData page = _GIconData(0xE117);
   static const IconData book = _GIconData(0xE118);
   static const IconData test = _GIconData(0xE119);
   static const IconData flashCards = _GIconData(0xE11A);
+  static const IconData testRepeat = _GIconData(0xE11B);
+  static const IconData testStar = _GIconData(0xE11C);
+  static const IconData testDaily = _GIconData(0xE11D);
   static const IconData pdf = _GIconData(0xE124);
   static const IconData doc = _GIconData(0xE125);
   static const IconData jpg = _GIconData(0xE126);
@@ -152,6 +159,7 @@ class GIcons {
   static const IconData advertising = _GIconData(0xE1FA);
   static const IconData noAdvertising = _GIconData(0xE1FB);
   static const IconData video = _GIconData(0xE1FC);
+  static const IconData alert = _GIconData(0xE200);
   static const IconData questionAnswer = _GIconData(0xE201);
   static const IconData info = _GIconData(0xE202);
   static const IconData help = _GIconData(0xE203);
@@ -174,6 +182,7 @@ class GIcons {
   static const IconData lotto = _GIconData(0xE214);
   static const IconData cabala = _GIconData(0xE215);
   static const IconData clover = _GIconData(0xE216);
+  static const IconData legal = _GIconData(0xE219);
   static const IconData sadFace = _GIconData(0xE22D);
   static const IconData happyFace = _GIconData(0xE22E);
   static const IconData dictation = _GIconData(0xE22F);
@@ -213,6 +222,8 @@ class GIcons {
   static const IconData television = _GIconData(0xE26B);
   static const IconData store = _GIconData(0xE26C);
   static const IconData drink = _GIconData(0xE26D);
+  static const IconData openBox = _GIconData(0xE271);
+  static const IconData briefcase = _GIconData(0xE274);
   static const IconData bulbNumber = _GIconData(0xE279);
   static const IconData bulbOn = _GIconData(0xE27A);
   static const IconData bulb = _GIconData(0xE27B);
@@ -252,8 +263,5 @@ class GIcons {
 
 class _GIconData extends IconData {
   const _GIconData(super.codePoint)
-      : super(
-          fontFamily: 'Geira Icons',
-          fontPackage: 'geira_icons',
-        );
+    : super(fontFamily: 'Geira Icons', fontPackage: 'geira_icons');
 }

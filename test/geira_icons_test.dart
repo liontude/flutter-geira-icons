@@ -9,12 +9,15 @@ void main() {
     });
 
     test('should return null for unknown key', () {
-      expect(GIcons.fromString('unknown'), isNull);
+      expect(GIcons.fromString('unknown'), null);
     });
 
     test('should retrieve all icon names', () {
       final icons = GIcons.getIconsName();
-      expect(icons, containsAll(['none', 'pencil', 'brush', 'wifi']));
+      expect(icons.contains('none'), true);
+      expect(icons.contains('pencil'), true);
+      expect(icons.contains('brush'), true);
+      expect(icons.contains('wifi'), true);
     });
   });
 }

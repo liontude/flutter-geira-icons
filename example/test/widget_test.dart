@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geira_icons/geira_icons.dart';
-
 import 'package:geira_icons_example/main.dart';
 
 void main() {
-  testWidgets('Verify Geira Icons App displays icons and search works',
-      (WidgetTester tester) async {
+  testWidgets('Verify Geira Icons App displays icons and search works', (
+    WidgetTester tester,
+  ) async {
     // Build the GeiraIconsApp and trigger a frame.
     await tester.pumpWidget(const GeiraIconsApp());
 

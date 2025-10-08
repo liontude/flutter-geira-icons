@@ -1,0 +1,6 @@
+# .pubignore
+example/android/local.properties
+example/ios/Podfile.lock
+build/
+.idea/
+*.iml

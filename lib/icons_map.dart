@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+
 import 'geira_icons.dart';
 
 const Map<String, IconData> iconMap = {
@@ -16,6 +17,7 @@ const Map<String, IconData> iconMap = {
   'noShow': GIcons.noShow,
   'personStatus': GIcons.personStatus,
   'chart': GIcons.chart,
+  'shuffle': GIcons.shuffle,
   'restore': GIcons.restore,
   'undo': GIcons.undo,
   'update': GIcons.update,
@@ -93,15 +95,21 @@ const Map<String, IconData> iconMap = {
   'time': GIcons.time,
   'chronometer': GIcons.chronometer,
   'timeRecord': GIcons.timeRecord,
+  'hourglass': GIcons.hourglass,
+  'vrMobile': GIcons.vrMobile,
   'folder': GIcons.folder,
   'folderOpen': GIcons.folderOpen,
   'folderAdd': GIcons.folderAdd,
   'folderSpecial': GIcons.folderSpecial,
   'folderDelete': GIcons.folderDelete,
+  'folderSecure': GIcons.folderSecure,
   'page': GIcons.page,
   'book': GIcons.book,
   'test': GIcons.test,
   'flashCards': GIcons.flashCards,
+  'testRepeat': GIcons.testRepeat,
+  'testStar': GIcons.testStar,
+  'testDaily': GIcons.testDaily,
   'pdf': GIcons.pdf,
   'doc': GIcons.doc,
   'jpg': GIcons.jpg,
@@ -150,6 +158,7 @@ const Map<String, IconData> iconMap = {
   'advertising': GIcons.advertising,
   'noAdvertising': GIcons.noAdvertising,
   'video': GIcons.video,
+  'alert': GIcons.alert,
   'questionAnswer': GIcons.questionAnswer,
   'info': GIcons.info,
   'help': GIcons.help,
@@ -172,6 +181,7 @@ const Map<String, IconData> iconMap = {
   'lotto': GIcons.lotto,
   'cabala': GIcons.cabala,
   'clover': GIcons.clover,
+  'legal': GIcons.legal,
   'sadFace': GIcons.sadFace,
   'happyFace': GIcons.happyFace,
   'dictation': GIcons.dictation,
@@ -211,6 +221,8 @@ const Map<String, IconData> iconMap = {
   'television': GIcons.television,
   'store': GIcons.store,
   'drink': GIcons.drink,
+  'openBox': GIcons.openBox,
+  'briefcase': GIcons.briefcase,
   'bulbNumber': GIcons.bulbNumber,
   'bulbOn': GIcons.bulbOn,
   'bulb': GIcons.bulb,
@@ -239,5 +251,5 @@ const Map<String, IconData> iconMap = {
   'googleLogo': GIcons.googleLogo,
   'whatsappLogo': GIcons.whatsappLogo,
   'xLogo': GIcons.xLogo,
-  'logo': GIcons.logo
+  'logo': GIcons.logo,
 };

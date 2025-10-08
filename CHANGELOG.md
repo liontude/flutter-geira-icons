@@ -1,3 +1,7 @@
+## 3.0.1
+
+* Some icons have been added, improved, and changed.
+
 ## 3.0.0
 
 * Refactored the _GIconData class to simplify the constructor using super parameters, improving code readability and alignment with Dart 2.17+ best practices. Enhanced error handling, optimized icon data generation, and ensured better performance and maintainability.

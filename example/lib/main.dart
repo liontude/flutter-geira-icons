@@ -40,9 +40,11 @@ class _GeiraIconsHomeState extends State<GeiraIconsHome> {
   @override
   Widget build(BuildContext context) {
     final filteredIcons = icons
-        .where((icon) =>
-            _searchTerm.isEmpty ||
-            icon.title.toLowerCase().contains(_searchTerm.toLowerCase()))
+        .where(
+          (icon) =>
+              _searchTerm.isEmpty ||
+              icon.title.toLowerCase().contains(_searchTerm.toLowerCase()),
+        )
         .toList();
 
     final isPortrait =
@@ -54,8 +56,9 @@ class _GeiraIconsHomeState extends State<GeiraIconsHome> {
         padding: const EdgeInsets.all(8.0),
         itemCount: filteredIcons.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount:
-              isPortrait ? 2 : 4, // 📱 More icons per row in landscape mode
+          crossAxisCount: isPortrait
+              ? 2
+              : 4, // 📱 More icons per row in landscape mode
           mainAxisSpacing: 8.0, // ✅ Reduced vertical spacing
           crossAxisSpacing: 8.0, // ✅ Reduced horizontal spacing
         ),
@@ -68,8 +71,9 @@ class _GeiraIconsHomeState extends State<GeiraIconsHome> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Hero(
-                    tag: icon.title,
-                    child: Icon(icon.iconData)), // 🚀 Smooth transition effect
+                  tag: icon.title,
+                  child: Icon(icon.iconData),
+                ), // 🚀 Smooth transition effect
                 const SizedBox(height: 8.0), // ✅ Space between icon and text
                 Text(icon.title, style: const TextStyle(fontSize: 14.0)),
               ],
@@ -88,10 +92,7 @@ class _GeiraIconsHomeState extends State<GeiraIconsHome> {
         builder: (_) => Scaffold(
           appBar: AppBar(
             leading: IconButton(
-              icon: const Icon(
-                GIcons.chevronLeft,
-                size: 32.0,
-              ),
+              icon: const Icon(GIcons.chevronLeft, size: 32.0),
               onPressed: () => Navigator.pop(context), // 🔙 Go back button
             ),
             title: Text(icon.title),
@@ -117,17 +118,19 @@ class _GeiraIconsHomeState extends State<GeiraIconsHome> {
           icon: const Icon(GIcons.search, size: 32.0),
           onPressed: () {
             ModalRoute.of(context)?.addLocalHistoryEntry(
-              LocalHistoryEntry(onRemove: () {
-                setState(() {
-                  _searchTerm = "";
-                  _isSearching = false;
-                });
-              }),
+              LocalHistoryEntry(
+                onRemove: () {
+                  setState(() {
+                    _searchTerm = "";
+                    _isSearching = false;
+                  });
+                },
+              ),
             );
 
             setState(() => _isSearching = true); // 🔍 Activate search mode
           },
-        )
+        ),
       ],
     );
   }
@@ -136,10 +139,7 @@ class _GeiraIconsHomeState extends State<GeiraIconsHome> {
   AppBar _buildSearchBar() {
     return AppBar(
       leading: IconButton(
-        icon: const Icon(
-          GIcons.chevronLeft,
-          size: 32.0,
-        ),
+        icon: const Icon(GIcons.chevronLeft, size: 32.0),
         onPressed: () {
           Navigator.pop(context); // 🔙 Exit search mode
           setState(() {
@@ -168,8 +168,8 @@ class IconDefinition implements Comparable<IconDefinition> {
   final String title;
 
   IconDefinition(String key)
-      : iconData = iconMap[key] ?? GIcons.error, // ✅ Use iconMap directly
-        title = key;
+    : iconData = iconMap[key] ?? GIcons.error, // ✅ Use iconMap directly
+      title = key;
 
   @override
   String toString() => 'IconDefinition{iconData: $iconData, title: $title}';
@@ -190,5 +190,6 @@ class IconDefinition implements Comparable<IconDefinition> {
 }
 
 // ✅ Initialize icons from the iconMap
-final List<IconDefinition> icons =
-    iconMap.keys.map((key) => IconDefinition(key)).toList();
+final List<IconDefinition> icons = iconMap.keys
+    .map((key) => IconDefinition(key))
+    .toList();
