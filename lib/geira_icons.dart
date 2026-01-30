@@ -18,6 +18,8 @@ class GIcons {
   static const IconData noShow = _GIconData(0xE00D);
   static const IconData personStatus = _GIconData(0xE00E);
   static const IconData chart = _GIconData(0xE013);
+  static const IconData backTen = _GIconData(0xE01C);
+  static const IconData forthTen = _GIconData(0xE01D);
   static const IconData shuffle = _GIconData(0xE01E);
   static const IconData restore = _GIconData(0xE01F);
   static const IconData undo = _GIconData(0xE02A);
@@ -44,12 +46,17 @@ class GIcons {
   static const IconData noAudio = _GIconData(0xE05F);
   static const IconData refreshAudio = _GIconData(0xE06A);
   static const IconData loadAudio = _GIconData(0xE06B);
-  static const IconData playArrow = _GIconData(0xE06D);
-  static const IconData pause = _GIconData(0xE06E);
-  static const IconData stop = _GIconData(0xE06F);
-  static const IconData skipNext = _GIconData(0xE07A);
-  static const IconData skipPrevious = _GIconData(0xE07B);
-  static const IconData record = _GIconData(0xE07C);
+  static const IconData playCircle = _GIconData(0xE06D);
+  static const IconData pauseCircle = _GIconData(0xE06E);
+  static const IconData stopCircle = _GIconData(0xE06F);
+  static const IconData nextCircle = _GIconData(0xE07A);
+  static const IconData backCircle = _GIconData(0xE07B);
+  static const IconData recordCircle = _GIconData(0xE07C);
+  static const IconData play = _GIconData(0xE07D);
+  static const IconData pause = _GIconData(0xE07E);
+  static const IconData stop = _GIconData(0xE07F);
+  static const IconData skipNext = _GIconData(0xE08A);
+  static const IconData skipPrevious = _GIconData(0xE08B);
   static const IconData previous = _GIconData(0xE08C);
   static const IconData next = _GIconData(0xE08D);
   static const IconData cloud = _GIconData(0xE097);
@@ -97,7 +104,6 @@ class GIcons {
   static const IconData chronometer = _GIconData(0xE0FD);
   static const IconData timeRecord = _GIconData(0xE0FE);
   static const IconData hourglass = _GIconData(0xE100);
-  static const IconData vrMobile = _GIconData(0xE108);
   static const IconData folder = _GIconData(0xE111);
   static const IconData folderOpen = _GIconData(0xE112);
   static const IconData folderAdd = _GIconData(0xE113);
@@ -111,6 +117,7 @@ class GIcons {
   static const IconData testRepeat = _GIconData(0xE11B);
   static const IconData testStar = _GIconData(0xE11C);
   static const IconData testDaily = _GIconData(0xE11D);
+  static const IconData audiobook = _GIconData(0xE123);
   static const IconData pdf = _GIconData(0xE124);
   static const IconData doc = _GIconData(0xE125);
   static const IconData jpg = _GIconData(0xE126);
@@ -149,6 +156,10 @@ class GIcons {
   static const IconData boy = _GIconData(0xE1A3);
   static const IconData disabled = _GIconData(0xE1A4);
   static const IconData photoId = _GIconData(0xE1A5);
+  static const IconData learn = _GIconData(0xE1A6);
+  static const IconData examen = _GIconData(0xE1A7);
+  static const IconData videoCall = _GIconData(0xE1A8);
+  static const IconData interview = _GIconData(0xE1A9);
   static const IconData politician = _GIconData(0xE1CC);
   static const IconData bull = _GIconData(0xE1CD);
   static const IconData cow = _GIconData(0xE1CE);
@@ -263,5 +274,5 @@ class GIcons {
 
 class _GIconData extends IconData {
   const _GIconData(super.codePoint)
-    : super(fontFamily: 'Geira Icons', fontPackage: 'geira_icons');
+      : super(fontFamily: 'Geira Icons', fontPackage: 'geira_icons');
 }

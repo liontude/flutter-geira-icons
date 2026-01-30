@@ -1,3 +1,7 @@
+## 3.0.2
+
+* Some icons have been added, improved, and changed.
+
 ## 3.0.1
 
 * Some icons have been added, improved, and changed.
