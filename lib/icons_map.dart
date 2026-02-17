@@ -132,6 +132,7 @@ const Map<String, IconData> iconMap = {
   'rbChecked': GIcons.rbChecked,
   'rbUnchecked': GIcons.rbUnchecked,
   'match': GIcons.match,
+  'thunder': GIcons.thunder,
   'temperature': GIcons.temperature,
   'oddEven': GIcons.oddEven,
   'hot': GIcons.hot,

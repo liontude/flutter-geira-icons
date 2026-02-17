@@ -133,6 +133,7 @@ class GIcons {
   static const IconData rbChecked = _GIconData(0xE139);
   static const IconData rbUnchecked = _GIconData(0xE13A);
   static const IconData match = _GIconData(0xE13B);
+  static const IconData thunder = _GIconData(0xE162);
   static const IconData temperature = _GIconData(0xE163);
   static const IconData oddEven = _GIconData(0xE164);
   static const IconData hot = _GIconData(0xE165);
