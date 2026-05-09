@@ -1,31 +1,21 @@
-import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
+const _fontUrl =
+    'https://cdn.jsdelivr.net/npm/@geira/iconfont/dist/fonts/GeiraIcons-Regular.ttf';
+const _jsonUrl =
+    'https://cdn.jsdelivr.net/npm/@geira/iconfont/dist/icons.json';
 
-const geiraIconsRepo =
-    'https://raw.githubusercontent.com/Templarian/MaterialDesign-Webfont';
-const fontFile = '$geiraIconsRepo/master/fonts/GeiraIcons-Regular.ttf';
-const icons = '$geiraIconsRepo/master/scss/_variables.scss';
+const _reservedKeywords = ['null', 'switch', 'sync', 'factory'];
 
-const reservedKeywords = ['null', 'switch', 'sync', 'factory'];
-
-Future<void> download(String link, String name) async {
-  try {
-    final request = await HttpClient().getUrl(Uri.parse(link));
-    final response = await request.close();
-    await response.pipe(File(name).openWrite());
-    if (kDebugMode) {
-      print('Downloaded $name successfully.');
-    }
-  } catch (e) {
-    if (kDebugMode) {
-      print('Error downloading $name: $e');
-    }
-  }
+Future<void> _download(String url, String dest) async {
+  final request = await HttpClient().getUrl(Uri.parse(url));
+  final response = await request.close();
+  await response.pipe(File(dest).openWrite());
+  print('Downloaded $dest');
 }
 
-String toCamelCase(String str) {
+String _toCamelCase(String str) {
   final exp = RegExp(
       r'[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+');
   final matches = exp.allMatches(str);
@@ -41,140 +31,111 @@ String toCamelCase(String str) {
       .replaceFirstMapped(RegExp(r'^[A-Z]'), (m) => m.group(0)!.toLowerCase());
 }
 
-class IconInfo {
-  String? name;
-  String? identifier;
-  String? codePoint;
+class _IconInfo {
+  final String name;
+  final String identifier;
+  final String codePoint;
 
-  IconInfo({this.name, this.codePoint, this.identifier});
+  const _IconInfo({
+    required this.name,
+    required this.identifier,
+    required this.codePoint,
+  });
 }
 
-class GIconsInfo {
-  List<IconInfo>? icons;
-  String? version;
-  GIconsInfo({this.icons, this.version});
+class _GIconsInfo {
+  final List<_IconInfo> icons;
+  final String version;
+
+  const _GIconsInfo({required this.icons, required this.version});
 }
 
-Future<GIconsInfo> readScss() async {
-  String? version;
-  bool isIconStarted = false;
-  final icons = <IconInfo>[];
+Future<_GIconsInfo> _parseJson() async {
+  final content = await File('./tool/icons.json').readAsString();
+  final data = jsonDecode(content) as Map<String, dynamic>;
+  final version = data['version'] as String;
+  final rawIcons = data['icons'] as Map<String, dynamic>;
 
-  try {
-    final lines = await File('./tool/_variables.scss').readAsLines();
+  final icons = rawIcons.entries.map((e) {
+    final name = e.key;
+    var identifier = _toCamelCase(name);
+    if (_reservedKeywords.contains(identifier)) identifier += 'Icon';
+    final codePoint = '0x${(e.value as String).toLowerCase()}';
+    return _IconInfo(name: name, identifier: identifier, codePoint: codePoint);
+  }).toList();
 
-    for (final line in lines) {
-      version ??= RegExp(r'version:\s+"(.+?)"').firstMatch(line)?.group(1);
+  return _GIconsInfo(icons: icons, version: version);
+}
 
-      if (!isIconStarted && line.contains('geira-icons: (')) {
-        isIconStarted = true;
-        continue;
-      }
+Future<void> _generateCode({
+  required String template,
+  required String dest,
+  required _GIconsInfo info,
+}) async {
+  final templateContent = await File(template).readAsString();
+  final placeholderMatch =
+      RegExp(r'<%(.*?)%>', dotAll: true).firstMatch(templateContent);
 
-      if (isIconStarted && line.contains(')')) break;
-
-      final match = RegExp(r'"([a-z0-9-]+)":\s+([0-9A-F]+)').firstMatch(line);
-      if (match != null) {
-        var iconName = match.group(1);
-        var iconIdentifier = toCamelCase(iconName!);
-        if (reservedKeywords.contains(iconIdentifier)) {
-          iconIdentifier += 'Icon';
-        }
-        final codePoint = match.group(2)!.toLowerCase();
-
-        icons.add(IconInfo(
-            name: iconName, identifier: iconIdentifier, codePoint: codePoint));
-      }
-    }
-  } catch (e) {
-    if (kDebugMode) {
-      print('Error reading SCSS: $e');
-    }
+  if (placeholderMatch == null) {
+    print('No placeholder found in $template');
+    return;
   }
 
-  return GIconsInfo(icons: icons, version: version);
+  final placeholder = placeholderMatch.group(0)!;
+  final templateStatement = placeholderMatch.group(1)!;
+
+  final generated = templateContent.replaceAll(
+    placeholder,
+    info.icons.map((icon) {
+      return templateStatement
+          .replaceAll('__ICON_NAME__', icon.identifier)
+          .replaceAll('__ORIGINAL_ICON_NAME__', icon.name)
+          .replaceAll('__CODE_POINT__', icon.codePoint);
+    }).join('\n'),
+  );
+
+  await File(dest).writeAsString(generated);
+  print('Generated $dest');
 }
 
-Future<void> generateCode(
-    {required String template,
-    required String dest,
-    required GIconsInfo info}) async {
-  try {
-    final templateFile = await File(template).readAsString();
-    final placeholderMatch = RegExp(r'<%(.*?)%>').firstMatch(templateFile);
-
-    if (placeholderMatch != null) {
-      final placeholder = placeholderMatch.group(0)!;
-      final templateStatement = placeholderMatch.group(1)!;
-
-      final generated = templateFile.replaceAll(
-        placeholder,
-        info.icons!.map((icon) {
-          return templateStatement
-              .replaceAll('__ICON_NAME__', icon.identifier!)
-              .replaceAll('__ORIGINAL_ICON_NAME__', icon.name!)
-              .replaceAll('__CODE_POINT__', '0x${icon.codePoint}');
-        }).join('\n'),
-      );
-
-      await File(dest).writeAsString(generated);
-      if (kDebugMode) {
-        print('Generated $dest successfully.');
-      }
-    }
-  } catch (e) {
-    if (kDebugMode) {
-      print('Error generating code for $dest: $e');
-    }
-  }
+Future<void> _updatePubspecVersion(String version) async {
+  final file = File('./pubspec.yaml');
+  final content = await file.readAsString();
+  final updated =
+      content.replaceFirst(RegExp(r'version:\s+\S+'), 'version: $version');
+  await file.writeAsString(updated);
+  print('Updated pubspec.yaml to version $version');
 }
 
 Future<void> main() async {
-  if (kDebugMode) {
-    print('Downloading latest Geira icons...');
-  }
-  await download(fontFile, './tool/GeiraIcons-Regular.ttf');
-  await download(icons, './tool/_variables.scss');
+  print('Downloading latest Geira icons...');
+  await Future.wait([
+    _download(_fontUrl, './tool/GeiraIcons-Regular.ttf'),
+    _download(_jsonUrl, './tool/icons.json'),
+  ]);
 
-  if (kDebugMode) {
-    print('Parsing SCSS file...');
-  }
-  final info = await readScss();
+  print('Parsing icons.json...');
+  final info = await _parseJson();
 
-  if (kDebugMode) {
-    print('Generating Dart files...');
-  }
-  await generateCode(
-    template: './tool/geira_icons.dart.template',
-    dest: './lib/geira_icons.dart',
-    info: info,
-  );
-  await generateCode(
-    template: './tool/icons_map.dart.template',
-    dest: './lib/icons_map.dart',
-    info: info,
-  );
+  print('Generating Dart files...');
+  await Future.wait([
+    _generateCode(
+      template: './tool/geira_icons.dart.template',
+      dest: './lib/geira_icons.dart',
+      info: info,
+    ),
+    _generateCode(
+      template: './tool/icons_map.dart.template',
+      dest: './lib/src/icons_map.dart',
+      info: info,
+    ),
+  ]);
 
-  try {
-    File('./tool/GeiraIcons-Regular.ttf')
-        .renameSync('./lib/fonts/GeiraIcons-Regular.ttf');
-    File('./tool/_variables.scss').deleteSync();
-  } catch (e) {
-    if (kDebugMode) {
-      print('Error moving files: $e');
-    }
-  }
+  File('./tool/GeiraIcons-Regular.ttf')
+      .renameSync('./lib/fonts/GeiraIcons-Regular.ttf');
+  File('./tool/icons.json').deleteSync();
 
-  final spec = await File('./pubspec.yaml').readAsString();
-  final versionMatch =
-      RegExp(r'version:\s(\d+)\.(\d+)\.(\d+)').firstMatch(spec);
-  final currentVersion = versionMatch?[3] ?? '0';
-  final latestVersion = info.version?.replaceAll('.', '') ?? '0';
+  await _updatePubspecVersion(info.version);
 
-  if (kDebugMode) {
-    print('Done! Latest version: ${info.version}');
-  }
-  if (kDebugMode) {
-    print('Need to publish: ${currentVersion != latestVersion}');
-  }
+  print('Done! Version: ${info.version}');
 }
