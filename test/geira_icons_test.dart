@@ -11,12 +11,12 @@ void main() {
       expect(GIcons.byName('star'), GIcons.star);
     });
 
-    test('returns correct IconData for hyphenated names', () {
-      expect(GIcons.byName('chevron-up'), GIcons.chevronUp);
-      expect(GIcons.byName('chevron-left'), GIcons.chevronLeft);
-      expect(GIcons.byName('notifications-off'), GIcons.notificationsOff);
-      expect(GIcons.byName('favorite-border'), GIcons.favoriteBorder);
-      expect(GIcons.byName('arrow-right'), GIcons.arrowRight);
+    test('returns correct IconData for camelCase compound names', () {
+      expect(GIcons.byName('chevronUp'), GIcons.chevronUp);
+      expect(GIcons.byName('chevronLeft'), GIcons.chevronLeft);
+      expect(GIcons.byName('notificationsOff'), GIcons.notificationsOff);
+      expect(GIcons.byName('favoriteBorder'), GIcons.favoriteBorder);
+      expect(GIcons.byName('arrowRight'), GIcons.arrowRight);
     });
 
     test('returns null for unknown names', () {
@@ -47,19 +47,19 @@ void main() {
       expect(names, contains('star'));
     });
 
-    test('contains hyphenated icon names', () {
+    test('contains camelCase compound names', () {
       final names = GIcons.iconNames;
-      expect(names, contains('chevron-up'));
-      expect(names, contains('chevron-left'));
-      expect(names, contains('notifications-off'));
-      expect(names, contains('favorite-border'));
+      expect(names, contains('chevronUp'));
+      expect(names, contains('chevronLeft'));
+      expect(names, contains('notificationsOff'));
+      expect(names, contains('favoriteBorder'));
     });
 
-    test('does not contain camelCase names', () {
+    test('does not contain kebab-case names', () {
       final names = GIcons.iconNames.toList();
-      expect(names, isNot(contains('chevronUp')));
-      expect(names, isNot(contains('notificationsOff')));
-      expect(names, isNot(contains('favoriteBorder')));
+      expect(names, isNot(contains('chevron-up')));
+      expect(names, isNot(contains('notifications-off')));
+      expect(names, isNot(contains('favorite-border')));
     });
 
     test('is non-empty', () {
@@ -80,7 +80,7 @@ void main() {
     test('byName and all return the same IconData', () {
       expect(GIcons.byName('pencil'), equals(GIcons.all['pencil']));
       expect(GIcons.byName('wifi'), equals(GIcons.all['wifi']));
-      expect(GIcons.byName('chevron-up'), equals(GIcons.all['chevron-up']));
+      expect(GIcons.byName('chevronUp'), equals(GIcons.all['chevronUp']));
     });
 
     test('values are non-null', () {
@@ -129,7 +129,7 @@ void main() {
     test('byName result equals the static constant', () {
       expect(GIcons.byName('pencil'), equals(GIcons.pencil));
       expect(GIcons.byName('star'), equals(GIcons.star));
-      expect(GIcons.byName('chevron-up'), equals(GIcons.chevronUp));
+      expect(GIcons.byName('chevronUp'), equals(GIcons.chevronUp));
     });
   });
 }
