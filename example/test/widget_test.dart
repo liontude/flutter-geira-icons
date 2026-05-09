@@ -4,41 +4,82 @@ import 'package:geira_icons/geira_icons.dart';
 import 'package:geira_icons_example/main.dart';
 
 void main() {
-  testWidgets('Verify Geira Icons App displays icons and search works', (
-    WidgetTester tester,
-  ) async {
-    // Build the GeiraIconsApp and trigger a frame.
+  testWidgets('home screen shows title and icons', (tester) async {
     await tester.pumpWidget(const GeiraIconsApp());
+    await tester.pumpAndSettle();
 
-    // Verify that the title "Geira Icons" is displayed.
     expect(find.text('Geira Icons'), findsOneWidget);
-
-    // Verify that at least one icon is displayed.
     expect(find.byType(Icon), findsWidgets);
+    expect(find.byType(SearchBar), findsOneWidget);
+    expect(find.byType(GridView), findsOneWidget);
+  });
 
-    // Tap the search icon to activate search mode.
-    await tester.tap(find.byIcon(GIcons.search));
+  testWidgets('search filters icons by name', (tester) async {
+    await tester.pumpWidget(const GeiraIconsApp());
     await tester.pumpAndSettle();
 
-    // Enter text in the search bar.
-    await tester.enterText(find.byType(TextField), 'chat');
+    final initialCount = tester.widgetList(find.byType(Card)).length;
+
+    await tester.enterText(find.byType(SearchBar), 'chat');
     await tester.pumpAndSettle();
 
-    // Verify that the icon related to 'chat' is displayed.
-    expect(find.text('chat'), findsOneWidget);
+    final filteredCount = tester.widgetList(find.byType(Card)).length;
+    expect(filteredCount, lessThan(initialCount));
+    expect(find.text('chat'), findsWidgets);
+  });
 
-    // Tap the icon to view the enlarged version.
-    await tester.tap(find.text('chat'));
+  testWidgets('empty search shows no-results message', (tester) async {
+    await tester.pumpWidget(const GeiraIconsApp());
     await tester.pumpAndSettle();
 
-    // Verify that the enlarged icon is displayed.
-    expect(find.byType(Hero), findsOneWidget);
+    await tester.enterText(find.byType(SearchBar), 'zzz_nonexistent');
+    await tester.pumpAndSettle();
 
-    // Tap the back button to return to the home screen.
+    expect(find.byType(GridView), findsNothing);
+    expect(find.textContaining('No icons found'), findsOneWidget);
+  });
+
+  testWidgets('tapping an icon tile navigates to detail page', (tester) async {
+    await tester.pumpWidget(const GeiraIconsApp());
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(SearchBar), 'chat');
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('chat').first);
+    await tester.pumpAndSettle();
+
+    expect(find.byType(Hero), findsWidgets);
+    expect(find.text('chat'), findsWidgets);
+  });
+
+  testWidgets('back button on detail page returns to home', (tester) async {
+    await tester.pumpWidget(const GeiraIconsApp());
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(SearchBar), 'chat');
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('chat').first);
+    await tester.pumpAndSettle();
+
     await tester.tap(find.byIcon(GIcons.chevronLeft));
     await tester.pumpAndSettle();
 
-    // Verify that we're back on the home screen.
     expect(find.text('Geira Icons'), findsOneWidget);
+    expect(find.byType(SearchBar), findsOneWidget);
+  });
+
+  testWidgets('detail page shows icon name and codepoint', (tester) async {
+    await tester.pumpWidget(const GeiraIconsApp());
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(SearchBar), 'star');
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('star').first);
+    await tester.pumpAndSettle();
+
+    expect(find.text('star'), findsWidgets);
+    expect(find.textContaining('0x'), findsOneWidget);
   });
 }

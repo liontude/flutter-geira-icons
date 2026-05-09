@@ -1,16 +1,17 @@
-# Geira Icons
+# Geira Icons — Example App
 
-A new Flutter project.
+A gallery app that displays all icons available in the [geira_icons](https://pub.dev/packages/geira_icons) package.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Browse the full Geira Icons collection in a responsive grid.
+- Search icons by name in real time.
+- Tap any icon to see it full-size along with its hex codePoint.
+- Supports light and dark mode automatically.
 
-A few resources to get you started if this is your first Flutter project:
+## Running the example
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+cd example
+flutter run
+```

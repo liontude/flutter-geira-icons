@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:geira_icons/geira_icons.dart';
-import 'package:geira_icons/icons_map.dart';
 
 void main() {
   runApp(const GeiraIconsApp());
@@ -15,11 +15,15 @@ class GeiraIconsApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Geira Icons',
       theme: ThemeData(
-        iconTheme: const IconThemeData(size: 42.0, color: Colors.black87),
-        primarySwatch: Colors.blue,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 16.0, color: Colors.black87),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4A6FFF)),
+        useMaterial3: true,
+      ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF4A6FFF),
+          brightness: Brightness.dark,
         ),
+        useMaterial3: true,
       ),
       home: const GeiraIconsHome(),
     );
@@ -34,162 +38,207 @@ class GeiraIconsHome extends StatefulWidget {
 }
 
 class _GeiraIconsHomeState extends State<GeiraIconsHome> {
-  String _searchTerm = "";
-  bool _isSearching = false;
+  final _searchController = SearchController();
+  String _searchTerm = '';
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final filteredIcons = icons
-        .where(
-          (icon) =>
-              _searchTerm.isEmpty ||
-              icon.title.toLowerCase().contains(_searchTerm.toLowerCase()),
-        )
-        .toList();
-
-    final isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
+    final allNames = GIcons.iconNames.toList();
+    final filteredNames = _searchTerm.isEmpty
+        ? allNames
+        : allNames
+            .where((n) => n.toLowerCase().contains(_searchTerm.toLowerCase()))
+            .toList();
 
     return Scaffold(
-      appBar: _isSearching ? _buildSearchBar() : _buildTitleBar(),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(8.0),
-        itemCount: filteredIcons.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: isPortrait
-              ? 2
-              : 4, // 📱 More icons per row in landscape mode
-          mainAxisSpacing: 8.0, // ✅ Reduced vertical spacing
-          crossAxisSpacing: 8.0, // ✅ Reduced horizontal spacing
-        ),
-        itemBuilder: (context, index) {
-          final icon = filteredIcons[index];
-
-          return InkWell(
-            onTap: () => _showIconDetail(context, icon), // 👆 Handle icon tap
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Hero(
-                  tag: icon.title,
-                  child: Icon(icon.iconData),
-                ), // 🚀 Smooth transition effect
-                const SizedBox(height: 8.0), // ✅ Space between icon and text
-                Text(icon.title, style: const TextStyle(fontSize: 14.0)),
+      appBar: AppBar(
+        title: const Text('Geira Icons'),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(64),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: SearchBar(
+              controller: _searchController,
+              hintText: 'Search ${allNames.length} icons…',
+              leading: const Icon(GIcons.search),
+              trailing: [
+                if (_searchTerm.isNotEmpty)
+                  IconButton(
+                    icon: const Icon(GIcons.close),
+                    onPressed: () {
+                      _searchController.clear();
+                      setState(() => _searchTerm = '');
+                    },
+                  ),
               ],
-            ),
-          );
-        },
-      ),
-    );
-  }
-
-  // 🚀 Navigates to a new screen showing the icon in a larger view
-  void _showIconDetail(BuildContext context, IconDefinition icon) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => Scaffold(
-          appBar: AppBar(
-            leading: IconButton(
-              icon: const Icon(GIcons.chevronLeft, size: 32.0),
-              onPressed: () => Navigator.pop(context), // 🔙 Go back button
-            ),
-            title: Text(icon.title),
-          ),
-          backgroundColor: Colors.white,
-          body: Center(
-            child: Hero(
-              tag: icon.title,
-              child: Icon(icon.iconData, size: 100.0), // 🔍 Enlarged icon
+              onChanged: (value) => setState(() => _searchTerm = value),
             ),
           ),
         ),
       ),
-    );
-  }
-
-  // 🗂️ Default AppBar with title
-  AppBar _buildTitleBar() {
-    return AppBar(
-      title: const Text("Geira Icons"),
-      actions: [
-        IconButton(
-          icon: const Icon(GIcons.search, size: 32.0),
-          onPressed: () {
-            ModalRoute.of(context)?.addLocalHistoryEntry(
-              LocalHistoryEntry(
-                onRemove: () {
-                  setState(() {
-                    _searchTerm = "";
-                    _isSearching = false;
-                  });
-                },
+      body: filteredNames.isEmpty
+          ? Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    GIcons.search,
+                    size: 48,
+                    color: Theme.of(context).colorScheme.outlineVariant,
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    'No icons found for "$_searchTerm"',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                  ),
+                ],
               ),
-            );
-
-            setState(() => _isSearching = true); // 🔍 Activate search mode
-          },
-        ),
-      ],
-    );
-  }
-
-  // 🔍 AppBar for search functionality
-  AppBar _buildSearchBar() {
-    return AppBar(
-      leading: IconButton(
-        icon: const Icon(GIcons.chevronLeft, size: 32.0),
-        onPressed: () {
-          Navigator.pop(context); // 🔙 Exit search mode
-          setState(() {
-            _isSearching = false;
-            _searchTerm = "";
-          });
-        },
-      ),
-      title: TextField(
-        onChanged: (text) =>
-            setState(() => _searchTerm = text), // 🔎 Live search filter
-        autofocus: true,
-        style: const TextStyle(fontSize: 18.0),
-        decoration: const InputDecoration(
-          hintText: "Search icons...",
-          border: InputBorder.none, // ✅ Clean, borderless search bar
-        ),
-      ),
+            )
+          : LayoutBuilder(
+              builder: (context, constraints) {
+                final crossAxisCount =
+                    (constraints.maxWidth / 110).floor().clamp(2, 8);
+                return GridView.builder(
+                  padding: const EdgeInsets.all(12),
+                  itemCount: filteredNames.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
+                  ),
+                  itemBuilder: (context, index) {
+                    final name = filteredNames[index];
+                    final iconData = GIcons.byName(name)!;
+                    return _IconTile(name: name, iconData: iconData);
+                  },
+                );
+              },
+            ),
     );
   }
 }
 
-// 📦 Class to define icons
-class IconDefinition implements Comparable<IconDefinition> {
+class _IconTile extends StatelessWidget {
+  const _IconTile({required this.name, required this.iconData});
+
+  final String name;
   final IconData iconData;
-  final String title;
-
-  IconDefinition(String key)
-    : iconData = iconMap[key] ?? GIcons.error, // ✅ Use iconMap directly
-      title = key;
 
   @override
-  String toString() => 'IconDefinition{iconData: $iconData, title: $title}';
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is IconDefinition &&
-          runtimeType == other.runtimeType &&
-          iconData == other.iconData &&
-          title == other.title;
-
-  @override
-  int get hashCode => iconData.hashCode ^ title.hashCode;
-
-  @override
-  int compareTo(IconDefinition other) => title.compareTo(other.title);
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Card.filled(
+      color: colorScheme.surfaceContainerHighest,
+      margin: EdgeInsets.zero,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            builder: (_) => _IconDetailPage(name: name, iconData: iconData),
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Hero(
+              tag: name,
+              child: Icon(iconData, size: 32, color: colorScheme.onSurface),
+            ),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6),
+              child: Text(
+                name,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-// ✅ Initialize icons from the iconMap
-final List<IconDefinition> icons = iconMap.keys
-    .map((key) => IconDefinition(key))
-    .toList();
+class _IconDetailPage extends StatelessWidget {
+  const _IconDetailPage({required this.name, required this.iconData});
+
+  final String name;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+    final codePoint =
+        '0x${iconData.codePoint.toRadixString(16).toUpperCase()}';
+
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(GIcons.chevronLeft),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text(name),
+        actions: [
+          IconButton(
+            icon: const Icon(GIcons.share),
+            tooltip: 'Copy icon name',
+            onPressed: () {
+              Clipboard.setData(ClipboardData(text: name));
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Copied "$name" to clipboard'),
+                  behavior: SnackBarBehavior.floating,
+                  width: 280,
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Hero(
+              tag: name,
+              child: Icon(iconData, size: 120, color: colorScheme.primary),
+            ),
+            const SizedBox(height: 32),
+            Text(name, style: textTheme.headlineSmall),
+            const SizedBox(height: 8),
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              decoration: BoxDecoration(
+                color: colorScheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                codePoint,
+                style: textTheme.bodyMedium?.copyWith(
+                  color: colorScheme.onSurfaceVariant,
+                  fontFamily: 'monospace',
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,6 +1,15 @@
-# .pubignore
-example/android/local.properties
-example/ios/Podfile.lock
+# Exclude Claude Code memory file
+CLAUDE.md
+
+# Exclude build artifacts and IDE files
 build/
 .idea/
 *.iml
+.dart_tool/
+
+# Exclude the update tool (not needed by consumers of the package)
+tool/
+
+# Exclude example local config
+example/android/local.properties
+example/ios/Podfile.lock
