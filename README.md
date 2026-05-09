@@ -38,17 +38,17 @@ Icon(GIcons.chevronRight)
 
 ### Look up an icon by name
 
-Icon names use kebab-case (matching the original Geira Icons identifiers):
+Icon names use camelCase, matching the static constants:
 
 ```dart
-final icon = GIcons.byName('chevron-right'); // returns IconData?
-final icon = GIcons.byName('notifications-off');
+final icon = GIcons.byName('chevronRight'); // returns IconData?
+final icon = GIcons.byName('notificationsOff');
 ```
 
 ### List all available icons
 
 ```dart
-// Iterable<String> of all icon names in kebab-case
+// Iterable<String> of all icon names in camelCase
 for (final name in GIcons.iconNames) {
   print(name);
 }

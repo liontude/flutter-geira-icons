@@ -53,7 +53,7 @@ class _GeiraIconsHomeState extends State<GeiraIconsHome> {
     final filteredNames = _searchTerm.isEmpty
         ? allNames
         : allNames
-            .where((n) => n.contains(_searchTerm.toLowerCase()))
+            .where((n) => n.toLowerCase().contains(_searchTerm.toLowerCase()))
             .toList();
 
     return Scaffold(
