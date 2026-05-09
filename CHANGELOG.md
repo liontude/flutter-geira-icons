@@ -1,3 +1,14 @@
+## 4.0.0
+
+* Migrated to a pure Dart icon font package — all native platform plugin
+  code (iOS, macOS, Linux, Windows) has been removed.
+* Moved internal classes to `lib/src/` to keep the public API surface clean.
+* Added `GIcons.byName(String name)` for dynamic icon lookup by kebab-case name.
+* Added `GIcons.iconNames` (`Iterable<String>`) to enumerate all icon names.
+* Added `GIcons.all` (`Map<String, IconData>`) for direct map access.
+* Updated SDK constraints to `>=3.0.0 <4.0.0` and Flutter to `>=3.10.0`.
+* Updated icon set from the Geira CDN (`@geira/iconfont`).
+
 ## 3.0.3
 
 * Adding a new icon
