@@ -1,6 +1,4 @@
-import 'package:flutter/widgets.dart';
-
-class GIconData extends IconData {
-  const GIconData(super.codePoint)
-      : super(fontFamily: 'Geira Icons', fontPackage: 'geira_icons');
-}
+/// Font family and package shared by every Geira [IconData] instance.
+/// `IconData` is a final class since Flutter 3.47, so it can't be subclassed.
+const String geiraFontFamily = 'Geira Icons';
+const String geiraFontPackage = 'geira_icons';

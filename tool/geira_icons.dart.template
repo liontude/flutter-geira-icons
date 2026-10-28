@@ -6,7 +6,7 @@ import 'src/icons_map.dart';
 class GIcons {
   GIcons._();
 
-<%  static const IconData __ICON_NAME__ = GIconData(__CODE_POINT__);%>
+<%  static const IconData __ICON_NAME__ = IconData(__CODE_POINT__, fontFamily: geiraFontFamily, fontPackage: geiraFontPackage);%>
 
   static const Map<String, IconData> all = iconMap;
 
