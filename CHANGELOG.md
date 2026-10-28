@@ -1,3 +1,12 @@
+## 4.1.0
+
+* Fixed compilation on Flutter 3.47+, where `IconData` is a final class and
+  can no longer be subclassed. Icons are now plain `IconData` constants; the
+  public API (`GIcons.*`, `byName`, `iconNames`, `all`) is unchanged.
+* Raised the minimum SDK to Dart `>=3.13.0` and Flutter `>=3.47.0`.
+* Updated `flutter_lints` to `^6.0.0`.
+* Added a GitHub Actions workflow running analyze and tests on Flutter 3.47.8.
+
 ## 4.0.0
 
 * Migrated to a pure Dart icon font package — all native platform plugin
