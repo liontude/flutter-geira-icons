@@ -6,8 +6,8 @@ The [Geira Icons](https://icons.geira.com/) family available as a Flutter icon f
 
 ## Requirements
 
-- Dart `>=3.0.0 <4.0.0`
-- Flutter `>=3.10.0`
+- Dart `>=3.13.0 <4.0.0`
+- Flutter `>=3.47.0`
 
 ## Installation
 
@@ -15,7 +15,7 @@ Add `geira_icons` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  geira_icons: ^4.0.0
+  geira_icons: ^4.1.0
 ```
 
 Then run:

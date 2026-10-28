@@ -6,267 +6,1311 @@ import 'src/icons_map.dart';
 class GIcons {
   GIcons._();
 
-  static const IconData none = GIconData(0xe000);
-  static const IconData pencil = GIconData(0xe001);
-  static const IconData brush = GIconData(0xe002);
-  static const IconData wifi = GIconData(0xe004);
-  static const IconData chat = GIconData(0xe005);
-  static const IconData notifications = GIconData(0xe007);
-  static const IconData notificationsOff = GIconData(0xe008);
-  static const IconData notificationsActive = GIconData(0xe009);
-  static const IconData send = GIconData(0xe00a);
-  static const IconData person = GIconData(0xe00b);
-  static const IconData people = GIconData(0xe00c);
-  static const IconData noShow = GIconData(0xe00d);
-  static const IconData personStatus = GIconData(0xe00e);
-  static const IconData chart = GIconData(0xe013);
-  static const IconData backTen = GIconData(0xe01c);
-  static const IconData forthTen = GIconData(0xe01d);
-  static const IconData shuffle = GIconData(0xe01e);
-  static const IconData restore = GIconData(0xe01f);
-  static const IconData undo = GIconData(0xe02a);
-  static const IconData update = GIconData(0xe02b);
-  static const IconData refresh = GIconData(0xe02c);
-  static const IconData chevronUp = GIconData(0xe02d);
-  static const IconData chevronRight = GIconData(0xe02e);
-  static const IconData chevronDown = GIconData(0xe02f);
-  static const IconData chevronLeft = GIconData(0xe03a);
-  static const IconData arrowUp = GIconData(0xe03b);
-  static const IconData arrowRight = GIconData(0xe03c);
-  static const IconData arrowDown = GIconData(0xe03d);
-  static const IconData arrowLeft = GIconData(0xe03e);
-  static const IconData delete = GIconData(0xe03f);
-  static const IconData volume = GIconData(0xe04c);
-  static const IconData volumeLow = GIconData(0xe04d);
-  static const IconData volumeMedium = GIconData(0xe04e);
-  static const IconData volumeUp = GIconData(0xe04f);
-  static const IconData volumeOff = GIconData(0xe05a);
-  static const IconData hearing = GIconData(0xe05b);
-  static const IconData mic = GIconData(0xe05c);
-  static const IconData micOff = GIconData(0xe05d);
-  static const IconData recording = GIconData(0xe05e);
-  static const IconData noAudio = GIconData(0xe05f);
-  static const IconData refreshAudio = GIconData(0xe06a);
-  static const IconData loadAudio = GIconData(0xe06b);
-  static const IconData playCircle = GIconData(0xe06d);
-  static const IconData pauseCircle = GIconData(0xe06e);
-  static const IconData stopCircle = GIconData(0xe06f);
-  static const IconData nextCircle = GIconData(0xe07a);
-  static const IconData backCircle = GIconData(0xe07b);
-  static const IconData recordCircle = GIconData(0xe07c);
-  static const IconData play = GIconData(0xe07d);
-  static const IconData pause = GIconData(0xe07e);
-  static const IconData stop = GIconData(0xe07f);
-  static const IconData skipNext = GIconData(0xe08a);
-  static const IconData skipPrevious = GIconData(0xe08b);
-  static const IconData previous = GIconData(0xe08c);
-  static const IconData next = GIconData(0xe08d);
-  static const IconData cloud = GIconData(0xe097);
-  static const IconData upload = GIconData(0xe098);
-  static const IconData upBalls = GIconData(0xe099);
-  static const IconData download = GIconData(0xe09a);
-  static const IconData rearrange = GIconData(0xe09b);
-  static const IconData slider = GIconData(0xe09d);
-  static const IconData list = GIconData(0xe09e);
-  static const IconData sidebarClose = GIconData(0xe09f);
-  static const IconData sidebarOpen = GIconData(0xe0a0);
-  static const IconData openMenu = GIconData(0xe0a1);
-  static const IconData closeMenu = GIconData(0xe0a2);
-  static const IconData downMenu = GIconData(0xe0a3);
-  static const IconData upMenu = GIconData(0xe0a4);
-  static const IconData launch = GIconData(0xe0a5);
-  static const IconData exitToApp = GIconData(0xe0a6);
-  static const IconData menu = GIconData(0xe0a7);
-  static const IconData moreVert = GIconData(0xe0a8);
-  static const IconData moreHoriz = GIconData(0xe0a9);
-  static const IconData cellPhone = GIconData(0xe0b8);
-  static const IconData phone = GIconData(0xe0b9);
-  static const IconData home = GIconData(0xe0ba);
-  static const IconData language = GIconData(0xe0bb);
-  static const IconData url = GIconData(0xe0bc);
-  static const IconData lang = GIconData(0xe0bd);
-  static const IconData langHelp = GIconData(0xe0be);
-  static const IconData map = GIconData(0xe0bf);
-  static const IconData country = GIconData(0xe0c0);
-  static const IconData navigation = GIconData(0xe0c1);
-  static const IconData notification = GIconData(0xe0c8);
-  static const IconData flag = GIconData(0xe0c9);
-  static const IconData place = GIconData(0xe0ca);
-  static const IconData mail = GIconData(0xe0cb);
-  static const IconData award = GIconData(0xe0e7);
-  static const IconData trophy = GIconData(0xe0e8);
-  static const IconData shoppingCart = GIconData(0xe0f5);
-  static const IconData bet = GIconData(0xe0f6);
-  static const IconData addBalance = GIconData(0xe0f7);
-  static const IconData payment = GIconData(0xe0f8);
-  static const IconData bill = GIconData(0xe0f9);
-  static const IconData deal = GIconData(0xe0fa);
-  static const IconData gift = GIconData(0xe0fb);
-  static const IconData time = GIconData(0xe0fc);
-  static const IconData chronometer = GIconData(0xe0fd);
-  static const IconData timeRecord = GIconData(0xe0fe);
-  static const IconData hourglass = GIconData(0xe100);
-  static const IconData folder = GIconData(0xe111);
-  static const IconData folderOpen = GIconData(0xe112);
-  static const IconData folderAdd = GIconData(0xe113);
-  static const IconData folderSpecial = GIconData(0xe114);
-  static const IconData folderDelete = GIconData(0xe115);
-  static const IconData folderSecure = GIconData(0xe116);
-  static const IconData page = GIconData(0xe117);
-  static const IconData book = GIconData(0xe118);
-  static const IconData test = GIconData(0xe119);
-  static const IconData flashCards = GIconData(0xe11a);
-  static const IconData testRepeat = GIconData(0xe11b);
-  static const IconData testStar = GIconData(0xe11c);
-  static const IconData testDaily = GIconData(0xe11d);
-  static const IconData audiobook = GIconData(0xe123);
-  static const IconData pdf = GIconData(0xe124);
-  static const IconData doc = GIconData(0xe125);
-  static const IconData jpg = GIconData(0xe126);
-  static const IconData png = GIconData(0xe127);
-  static const IconData chevronTr = GIconData(0xe130);
-  static const IconData chevronDr = GIconData(0xe131);
-  static const IconData chevronDl = GIconData(0xe132);
-  static const IconData chevronTl = GIconData(0xe133);
-  static const IconData check = GIconData(0xe134);
-  static const IconData checkOutline = GIconData(0xe135);
-  static const IconData checked = GIconData(0xe136);
-  static const IconData unchecked = GIconData(0xe137);
-  static const IconData rbChecked = GIconData(0xe139);
-  static const IconData rbUnchecked = GIconData(0xe13a);
-  static const IconData match = GIconData(0xe13b);
-  static const IconData thunder = GIconData(0xe162);
-  static const IconData temperature = GIconData(0xe163);
-  static const IconData oddEven = GIconData(0xe164);
-  static const IconData hot = GIconData(0xe165);
-  static const IconData cold = GIconData(0xe166);
-  static const IconData hotCold = GIconData(0xe167);
-  static const IconData delta = GIconData(0xe168);
-  static const IconData deltaCold = GIconData(0xe169);
-  static const IconData deltaHot = GIconData(0xe16a);
-  static const IconData sum = GIconData(0xe16b);
-  static const IconData sumHot = GIconData(0xe16c);
-  static const IconData sumCold = GIconData(0xe16d);
-  static const IconData faceId = GIconData(0xe177);
-  static const IconData scan = GIconData(0xe17f);
-  static const IconData retryScan = GIconData(0xe180);
-  static const IconData arHoriz = GIconData(0xe181);
-  static const IconData arVert = GIconData(0xe182);
-  static const IconData parking = GIconData(0xe19f);
-  static const IconData bike = GIconData(0xe1a0);
-  static const IconData walk = GIconData(0xe1a1);
-  static const IconData girl = GIconData(0xe1a2);
-  static const IconData boy = GIconData(0xe1a3);
-  static const IconData disabled = GIconData(0xe1a4);
-  static const IconData photoId = GIconData(0xe1a5);
-  static const IconData learn = GIconData(0xe1a6);
-  static const IconData examen = GIconData(0xe1a7);
-  static const IconData videoCall = GIconData(0xe1a8);
-  static const IconData interview = GIconData(0xe1a9);
-  static const IconData politician = GIconData(0xe1cc);
-  static const IconData bull = GIconData(0xe1cd);
-  static const IconData cow = GIconData(0xe1ce);
-  static const IconData verified = GIconData(0xe1e1);
-  static const IconData verifiedUser = GIconData(0xe1e2);
-  static const IconData lock = GIconData(0xe1e3);
-  static const IconData lockOpen = GIconData(0xe1e4);
-  static const IconData advertising = GIconData(0xe1fa);
-  static const IconData noAdvertising = GIconData(0xe1fb);
-  static const IconData video = GIconData(0xe1fc);
-  static const IconData alert = GIconData(0xe200);
-  static const IconData questionAnswer = GIconData(0xe201);
-  static const IconData info = GIconData(0xe202);
-  static const IconData help = GIconData(0xe203);
-  static const IconData error = GIconData(0xe204);
-  static const IconData visibility = GIconData(0xe205);
-  static const IconData visibilityOff = GIconData(0xe206);
-  static const IconData thumbUp = GIconData(0xe207);
-  static const IconData thumbDown = GIconData(0xe208);
-  static const IconData favoriteBorder = GIconData(0xe209);
-  static const IconData favorite = GIconData(0xe20a);
-  static const IconData favoriteDislike = GIconData(0xe20b);
-  static const IconData share = GIconData(0xe20c);
-  static const IconData bookmark = GIconData(0xe20d);
-  static const IconData starBorder = GIconData(0xe20e);
-  static const IconData starHalf = GIconData(0xe20f);
-  static const IconData star = GIconData(0xe210);
-  static const IconData rate = GIconData(0xe211);
-  static const IconData ticket = GIconData(0xe212);
-  static const IconData game = GIconData(0xe213);
-  static const IconData lotto = GIconData(0xe214);
-  static const IconData cabala = GIconData(0xe215);
-  static const IconData clover = GIconData(0xe216);
-  static const IconData legal = GIconData(0xe219);
-  static const IconData sadFace = GIconData(0xe22d);
-  static const IconData happyFace = GIconData(0xe22e);
-  static const IconData dictation = GIconData(0xe22f);
-  static const IconData oral = GIconData(0xe230);
-  static const IconData eventAvailable = GIconData(0xe231);
-  static const IconData upcoming = GIconData(0xe232);
-  static const IconData past = GIconData(0xe233);
-  static const IconData event = GIconData(0xe234);
-  static const IconData noEvent = GIconData(0xe235);
-  static const IconData month = GIconData(0xe236);
-  static const IconData dashboard = GIconData(0xe23a);
-  static const IconData campaign = GIconData(0xe23b);
-  static const IconData unpin = GIconData(0xe243);
-  static const IconData pushPin = GIconData(0xe244);
-  static const IconData search = GIconData(0xe245);
-  static const IconData searchPage = GIconData(0xe246);
-  static const IconData searchPerson = GIconData(0xe247);
-  static const IconData searchNumber = GIconData(0xe248);
-  static const IconData camera = GIconData(0xe254);
-  static const IconData noImage = GIconData(0xe255);
-  static const IconData images = GIconData(0xe256);
-  static const IconData remove = GIconData(0xe257);
-  static const IconData removeCircle = GIconData(0xe258);
-  static const IconData add = GIconData(0xe259);
-  static const IconData addCircle = GIconData(0xe25a);
-  static const IconData close = GIconData(0xe25b);
-  static const IconData cancel = GIconData(0xe25c);
-  static const IconData filter = GIconData(0xe25d);
-  static const IconData edit = GIconData(0xe25e);
-  static const IconData settings = GIconData(0xe25f);
-  static const IconData save = GIconData(0xe260);
-  static const IconData addSquare = GIconData(0xe262);
-  static const IconData removeSquare = GIconData(0xe263);
-  static const IconData moreLess = GIconData(0xe264);
-  static const IconData total = GIconData(0xe265);
-  static const IconData number = GIconData(0xe266);
-  static const IconData television = GIconData(0xe26b);
-  static const IconData store = GIconData(0xe26c);
-  static const IconData drink = GIconData(0xe26d);
-  static const IconData openBox = GIconData(0xe271);
-  static const IconData briefcase = GIconData(0xe274);
-  static const IconData bulbNumber = GIconData(0xe279);
-  static const IconData bulbOn = GIconData(0xe27a);
-  static const IconData bulb = GIconData(0xe27b);
-  static const IconData cashier = GIconData(0xe27c);
-  static const IconData afternoon = GIconData(0xe285);
-  static const IconData evening = GIconData(0xe286);
-  static const IconData fullSquare = GIconData(0xe287);
-  static const IconData fullDot = GIconData(0xe288);
-  static const IconData brightness1 = GIconData(0xe289);
-  static const IconData brightness2 = GIconData(0xe28a);
-  static const IconData brightness3 = GIconData(0xe28b);
-  static const IconData brightness4 = GIconData(0xe28c);
-  static const IconData brightness5 = GIconData(0xe28d);
-  static const IconData brightness6 = GIconData(0xe28e);
-  static const IconData brightness7 = GIconData(0xe28f);
-  static const IconData facebook = GIconData(0xe291);
-  static const IconData twitter = GIconData(0xe292);
-  static const IconData youtube = GIconData(0xe293);
-  static const IconData instagram = GIconData(0xe294);
-  static const IconData linkedin = GIconData(0xe295);
-  static const IconData github = GIconData(0xe2a0);
-  static const IconData gitlab = GIconData(0xe2a1);
-  static const IconData npm = GIconData(0xe2a2);
-  static const IconData appleLogo = GIconData(0xe2a3);
-  static const IconData facebookLogo = GIconData(0xe2a4);
-  static const IconData googleLogo = GIconData(0xe2a5);
-  static const IconData whatsappLogo = GIconData(0xe2a6);
-  static const IconData xLogo = GIconData(0xe2a7);
-  static const IconData logo = GIconData(0xe2af);
+  static const IconData none = IconData(
+    0xe000,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData pencil = IconData(
+    0xe001,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brush = IconData(
+    0xe002,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData wifi = IconData(
+    0xe004,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chat = IconData(
+    0xe005,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData notifications = IconData(
+    0xe007,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData notificationsOff = IconData(
+    0xe008,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData notificationsActive = IconData(
+    0xe009,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData send = IconData(
+    0xe00a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData person = IconData(
+    0xe00b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData people = IconData(
+    0xe00c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData noShow = IconData(
+    0xe00d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData personStatus = IconData(
+    0xe00e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chart = IconData(
+    0xe013,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData backTen = IconData(
+    0xe01c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData forthTen = IconData(
+    0xe01d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData shuffle = IconData(
+    0xe01e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData restore = IconData(
+    0xe01f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData undo = IconData(
+    0xe02a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData update = IconData(
+    0xe02b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData refresh = IconData(
+    0xe02c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronUp = IconData(
+    0xe02d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronRight = IconData(
+    0xe02e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronDown = IconData(
+    0xe02f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronLeft = IconData(
+    0xe03a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData arrowUp = IconData(
+    0xe03b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData arrowRight = IconData(
+    0xe03c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData arrowDown = IconData(
+    0xe03d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData arrowLeft = IconData(
+    0xe03e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData delete = IconData(
+    0xe03f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData volume = IconData(
+    0xe04c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData volumeLow = IconData(
+    0xe04d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData volumeMedium = IconData(
+    0xe04e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData volumeUp = IconData(
+    0xe04f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData volumeOff = IconData(
+    0xe05a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData hearing = IconData(
+    0xe05b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData mic = IconData(
+    0xe05c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData micOff = IconData(
+    0xe05d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData recording = IconData(
+    0xe05e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData noAudio = IconData(
+    0xe05f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData refreshAudio = IconData(
+    0xe06a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData loadAudio = IconData(
+    0xe06b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData playCircle = IconData(
+    0xe06d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData pauseCircle = IconData(
+    0xe06e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData stopCircle = IconData(
+    0xe06f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData nextCircle = IconData(
+    0xe07a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData backCircle = IconData(
+    0xe07b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData recordCircle = IconData(
+    0xe07c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData play = IconData(
+    0xe07d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData pause = IconData(
+    0xe07e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData stop = IconData(
+    0xe07f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData skipNext = IconData(
+    0xe08a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData skipPrevious = IconData(
+    0xe08b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData previous = IconData(
+    0xe08c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData next = IconData(
+    0xe08d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData cloud = IconData(
+    0xe097,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData upload = IconData(
+    0xe098,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData upBalls = IconData(
+    0xe099,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData download = IconData(
+    0xe09a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData rearrange = IconData(
+    0xe09b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData slider = IconData(
+    0xe09d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData list = IconData(
+    0xe09e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData sidebarClose = IconData(
+    0xe09f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData sidebarOpen = IconData(
+    0xe0a0,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData openMenu = IconData(
+    0xe0a1,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData closeMenu = IconData(
+    0xe0a2,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData downMenu = IconData(
+    0xe0a3,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData upMenu = IconData(
+    0xe0a4,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData launch = IconData(
+    0xe0a5,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData exitToApp = IconData(
+    0xe0a6,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData menu = IconData(
+    0xe0a7,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData moreVert = IconData(
+    0xe0a8,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData moreHoriz = IconData(
+    0xe0a9,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData cellPhone = IconData(
+    0xe0b8,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData phone = IconData(
+    0xe0b9,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData home = IconData(
+    0xe0ba,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData language = IconData(
+    0xe0bb,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData url = IconData(
+    0xe0bc,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData lang = IconData(
+    0xe0bd,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData langHelp = IconData(
+    0xe0be,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData map = IconData(
+    0xe0bf,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData country = IconData(
+    0xe0c0,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData navigation = IconData(
+    0xe0c1,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData notification = IconData(
+    0xe0c8,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData flag = IconData(
+    0xe0c9,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData place = IconData(
+    0xe0ca,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData mail = IconData(
+    0xe0cb,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData award = IconData(
+    0xe0e7,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData trophy = IconData(
+    0xe0e8,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData shoppingCart = IconData(
+    0xe0f5,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bet = IconData(
+    0xe0f6,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData addBalance = IconData(
+    0xe0f7,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData payment = IconData(
+    0xe0f8,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bill = IconData(
+    0xe0f9,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData deal = IconData(
+    0xe0fa,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData gift = IconData(
+    0xe0fb,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData time = IconData(
+    0xe0fc,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chronometer = IconData(
+    0xe0fd,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData timeRecord = IconData(
+    0xe0fe,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData hourglass = IconData(
+    0xe100,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData folder = IconData(
+    0xe111,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData folderOpen = IconData(
+    0xe112,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData folderAdd = IconData(
+    0xe113,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData folderSpecial = IconData(
+    0xe114,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData folderDelete = IconData(
+    0xe115,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData folderSecure = IconData(
+    0xe116,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData page = IconData(
+    0xe117,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData book = IconData(
+    0xe118,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData test = IconData(
+    0xe119,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData flashCards = IconData(
+    0xe11a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData testRepeat = IconData(
+    0xe11b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData testStar = IconData(
+    0xe11c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData testDaily = IconData(
+    0xe11d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData audiobook = IconData(
+    0xe123,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData pdf = IconData(
+    0xe124,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData doc = IconData(
+    0xe125,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData jpg = IconData(
+    0xe126,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData png = IconData(
+    0xe127,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronTr = IconData(
+    0xe130,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronDr = IconData(
+    0xe131,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronDl = IconData(
+    0xe132,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData chevronTl = IconData(
+    0xe133,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData check = IconData(
+    0xe134,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData checkOutline = IconData(
+    0xe135,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData checked = IconData(
+    0xe136,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData unchecked = IconData(
+    0xe137,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData rbChecked = IconData(
+    0xe139,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData rbUnchecked = IconData(
+    0xe13a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData match = IconData(
+    0xe13b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData thunder = IconData(
+    0xe162,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData temperature = IconData(
+    0xe163,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData oddEven = IconData(
+    0xe164,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData hot = IconData(
+    0xe165,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData cold = IconData(
+    0xe166,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData hotCold = IconData(
+    0xe167,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData delta = IconData(
+    0xe168,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData deltaCold = IconData(
+    0xe169,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData deltaHot = IconData(
+    0xe16a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData sum = IconData(
+    0xe16b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData sumHot = IconData(
+    0xe16c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData sumCold = IconData(
+    0xe16d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData faceId = IconData(
+    0xe177,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData scan = IconData(
+    0xe17f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData retryScan = IconData(
+    0xe180,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData arHoriz = IconData(
+    0xe181,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData arVert = IconData(
+    0xe182,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData parking = IconData(
+    0xe19f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bike = IconData(
+    0xe1a0,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData walk = IconData(
+    0xe1a1,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData girl = IconData(
+    0xe1a2,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData boy = IconData(
+    0xe1a3,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData disabled = IconData(
+    0xe1a4,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData photoId = IconData(
+    0xe1a5,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData learn = IconData(
+    0xe1a6,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData examen = IconData(
+    0xe1a7,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData videoCall = IconData(
+    0xe1a8,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData interview = IconData(
+    0xe1a9,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData politician = IconData(
+    0xe1cc,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bull = IconData(
+    0xe1cd,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData cow = IconData(
+    0xe1ce,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData verified = IconData(
+    0xe1e1,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData verifiedUser = IconData(
+    0xe1e2,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData lock = IconData(
+    0xe1e3,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData lockOpen = IconData(
+    0xe1e4,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData advertising = IconData(
+    0xe1fa,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData noAdvertising = IconData(
+    0xe1fb,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData video = IconData(
+    0xe1fc,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData alert = IconData(
+    0xe200,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData questionAnswer = IconData(
+    0xe201,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData info = IconData(
+    0xe202,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData help = IconData(
+    0xe203,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData error = IconData(
+    0xe204,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData visibility = IconData(
+    0xe205,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData visibilityOff = IconData(
+    0xe206,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData thumbUp = IconData(
+    0xe207,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData thumbDown = IconData(
+    0xe208,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData favoriteBorder = IconData(
+    0xe209,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData favorite = IconData(
+    0xe20a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData favoriteDislike = IconData(
+    0xe20b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData share = IconData(
+    0xe20c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bookmark = IconData(
+    0xe20d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData starBorder = IconData(
+    0xe20e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData starHalf = IconData(
+    0xe20f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData star = IconData(
+    0xe210,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData rate = IconData(
+    0xe211,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData ticket = IconData(
+    0xe212,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData game = IconData(
+    0xe213,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData lotto = IconData(
+    0xe214,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData cabala = IconData(
+    0xe215,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData clover = IconData(
+    0xe216,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData legal = IconData(
+    0xe219,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData sadFace = IconData(
+    0xe22d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData happyFace = IconData(
+    0xe22e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData dictation = IconData(
+    0xe22f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData oral = IconData(
+    0xe230,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData eventAvailable = IconData(
+    0xe231,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData upcoming = IconData(
+    0xe232,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData past = IconData(
+    0xe233,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData event = IconData(
+    0xe234,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData noEvent = IconData(
+    0xe235,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData month = IconData(
+    0xe236,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData dashboard = IconData(
+    0xe23a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData campaign = IconData(
+    0xe23b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData unpin = IconData(
+    0xe243,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData pushPin = IconData(
+    0xe244,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData search = IconData(
+    0xe245,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData searchPage = IconData(
+    0xe246,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData searchPerson = IconData(
+    0xe247,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData searchNumber = IconData(
+    0xe248,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData camera = IconData(
+    0xe254,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData noImage = IconData(
+    0xe255,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData images = IconData(
+    0xe256,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData remove = IconData(
+    0xe257,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData removeCircle = IconData(
+    0xe258,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData add = IconData(
+    0xe259,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData addCircle = IconData(
+    0xe25a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData close = IconData(
+    0xe25b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData cancel = IconData(
+    0xe25c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData filter = IconData(
+    0xe25d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData edit = IconData(
+    0xe25e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData settings = IconData(
+    0xe25f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData save = IconData(
+    0xe260,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData addSquare = IconData(
+    0xe262,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData removeSquare = IconData(
+    0xe263,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData moreLess = IconData(
+    0xe264,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData total = IconData(
+    0xe265,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData number = IconData(
+    0xe266,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData television = IconData(
+    0xe26b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData store = IconData(
+    0xe26c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData drink = IconData(
+    0xe26d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData openBox = IconData(
+    0xe271,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData briefcase = IconData(
+    0xe274,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bulbNumber = IconData(
+    0xe279,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bulbOn = IconData(
+    0xe27a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData bulb = IconData(
+    0xe27b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData cashier = IconData(
+    0xe27c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData afternoon = IconData(
+    0xe285,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData evening = IconData(
+    0xe286,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData fullSquare = IconData(
+    0xe287,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData fullDot = IconData(
+    0xe288,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brightness1 = IconData(
+    0xe289,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brightness2 = IconData(
+    0xe28a,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brightness3 = IconData(
+    0xe28b,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brightness4 = IconData(
+    0xe28c,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brightness5 = IconData(
+    0xe28d,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brightness6 = IconData(
+    0xe28e,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData brightness7 = IconData(
+    0xe28f,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData facebook = IconData(
+    0xe291,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData twitter = IconData(
+    0xe292,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData youtube = IconData(
+    0xe293,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData instagram = IconData(
+    0xe294,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData linkedin = IconData(
+    0xe295,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData github = IconData(
+    0xe2a0,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData gitlab = IconData(
+    0xe2a1,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData npm = IconData(
+    0xe2a2,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData appleLogo = IconData(
+    0xe2a3,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData facebookLogo = IconData(
+    0xe2a4,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData googleLogo = IconData(
+    0xe2a5,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData whatsappLogo = IconData(
+    0xe2a6,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData xLogo = IconData(
+    0xe2a7,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
+  static const IconData logo = IconData(
+    0xe2af,
+    fontFamily: geiraFontFamily,
+    fontPackage: geiraFontPackage,
+  );
 
   static const Map<String, IconData> all = iconMap;
 
